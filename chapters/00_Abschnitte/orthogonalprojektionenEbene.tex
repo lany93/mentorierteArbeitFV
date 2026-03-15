@@ -1,13 +1,13 @@
 
 \subsection{Orthogonalprojektion auf eine Ebene im \texorpdfstring{$\mathbb{R}^3$}{R³}}
 
-In diesem Text arbeiten wir primär mit Projektionen im dreidimensionalen euklidischen Raum.
+Wir beginnen mit der Definition einer Orthogonalprojektion:
 
 \begin{definition} \label{def:orthogonalprojektion}
 Sei $E \subset \mathbb{R}^3$ eine Ebene durch den Ursprung mit dem Einheitsnormalenvektor $\vec{n}$. Die Orthogonalprojektion $\Pi_E: \mathbb{R}^3 \rightarrow E$ ist eine lineare Abbildung, die jedem Vektor $\vec{v} \in \mathbb{R}^3$ seinen Bildpunkt in $E$ so zuordnet, dass der Differenzvektor $\vec{v} - \Pi_E(\vec{v})$ parallel zu $\vec{n}$ steht.
 \end{definition}
 
-Für die Beweise in Kapitel \ref{sec:orthogonalprojektionen} werden wir explizite Orthogonalprojektionen berechnen. Zur Vorbereitung leiten wir hier die allgemeine Abbildungsvorschrift her. Jeder Vektor $\vec{v}$ lässt sich eindeutig in zwei Komponenten zerlegen:
+Für die Beweise in Kapitel \ref{sec:orthogonalprojektionen} werden wir explizite Orthogonalprojektionen berechnen. Zur Vorbereitung leiten wir hier die allgemeine Abbildungsvorschrift her. Sei $\Pi_E: \mathbb{R}^3 \rightarrow E$ eine Orthogonalprojektion auf die Ebene $E$ mit Einheitsnormalenvektor $n$. Jeder Vektor $\vec{v}$ lässt sich eindeutig in zwei Komponenten zerlegen:
 \begin{align} \label{eq:vektor_parallel_senkrecht}
     \vec{v} = \vec{v}_{\parallel} + \vec{v}_{\perp},
 \end{align}

@@ -1,41 +1,105 @@
 \subsection{Symmetriegruppen} \label{sec:symmetrieeigenschaftwürfel}
 
-Wir definieren die Symmetriegruppe von einem Polyeder wie folgt
+In diesem Abschnitt betrachten wir die Symmetriegruppen der regulären Polyeder im Detail. Dabei folgen wir N. Hungerbühler \cite{hungerbuehler_kombinatorik1}. Um die Symmetriegruppen zu verstehen, müssen wir uns zuerst mit Symmetrieoperationen bzw. Decktransformationen befassen. Wir bewegen uns dabei ausschliesslich im Euklidischen Raum $\mathbb{E}^n$.
+
 \begin{definition}
-Sei $X \subset \mathbb{R}^n$ eine geometrische Figur (in unserem Fall ein Polyeder im $\mathbb{R}^3$). Eine Symmetrie von $X$ ist eine abstandserhaltende Abbildung (Isometrie) $f: \mathbb{R}^n \to \mathbb{R}^n$, die die Figur als Ganzes auf sich selbst abbildet, für die also gilt: $f(X) = X$. Die Symmetriegruppe $S(X)$ ist die Menge all dieser Symmetrien von $X$. Die Gruppenoperation ist dabei die einfache Hintereinanderausführung (Komposition) der Abbildungen.
+    Eine Abbildung $f: \mathbb{E}^n \to \mathbb{E}^n$ heisst \textbf{Isometrie}, wenn sie Abstände zwischen beliebigen Punkten $x, y \in \mathbb{E}^n$ erhält. Es gilt also:
+    \begin{align}
+        \|f(x) - f(y)\| &= \|x - y\| \nonumber \\
+        &= \sqrt{\langle x - y, x - y \rangle} \quad \text{für alle } x, y \in \mathbb{E}^n, \nonumber
+    \end{align}
+    wobei $\langle x, y \rangle = \sum_{i=1}^n x_i y_i$ das Standardskalarprodukt bezeichnet.
 \end{definition}
 
-\begin{example}[Symmetriegruppe: Reguläres Tetraeder] \label{ex:regulaeres_tetraeder}
-Das reguläre Tetraeder hat genau 12 Kongruenzabbildungen. Diese kann man auf mehrere Arten finden. Einerseits wissen wir, dass ein Tetraeder 6 Kanten besitzt, welche in 2 Richtungen orientiert werden können. Daraus folgt, dass es $12$ Abbildungen gibt. Andererseits können wir die Abbildungen auch zählen. 
-\begin{center}
-\begin{tabular}{ |c|c|c|c| } 
- \hline
- Beschreibung & Symmetrieachse & Periodizität & Anzahl Abbildungen \\ 
- \hline
- Identität & - & - & 1 \\ 
- Ecke, Mitte geg. Dreiecksfläche& K-M & $\frac{\pi}{3}$ & $2*4 = 8$  \\ 
- Kante, Kante& K-K & $\frac{\pi}{2}$ & $1*3=3$  \\ 
- \hline
-  & & & 12 \\ 
- \hline
-\end{tabular}
-\end{center}
-\end{example}
-
-\begin{example}[Reguläres Hexaeder] \label{ex:regulaeres_hexaeder}
-TODO:...
-\end{example}
-
-\begin{example}[Reguläres Ikosaeder] \label{ex:regulaeres_ikosaeder}
-TODO:...
-\end{example}
-
-
-\subsubsection{Richtungserhaltende Abbildungen}
+Eine Isometrie ist folglich eine Abbildung, welche die Längen (und damit die Geometrie eines Körpers) bewahrt. Betrachten wir beispielhaft eine Rotation im Raum $\mathbb{E}^3$ um die $x$-Achse:
 \begin{align}
-    todo:
+     f_\theta: \mathbb{E}^3 \rightarrow \mathbb{E}^3, \quad \vec{x} \mapsto R(\theta) \vec{x} \nonumber
 \end{align}
+mit der Drehmatrix
+\begin{align}
+    R(\theta) := \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos\theta & -\sin\theta \\ 0 & \sin\theta & \cos\theta \end{pmatrix} \nonumber,
+\end{align}
+wobei $\theta$ den Drehwinkel angibt. Anschaulich ist klar, dass die Rotation eines Vektors $\vec{x}$ dessen Länge nicht verändert. Mathematisch lässt sich dies leicht verifizieren, da für Rotationsmatrizen stets $R(\theta)^T R(\theta) = I$ gilt.
 
+\begin{definition} \label{def:decktransformation}
+    Eine geometrische Figur ist eine nicht-leere Menge $\mathbb{F} \subset \mathbb{E}^n$. Eine Isometrie $w: \mathbb{E}^n \to \mathbb{E}^n$ heisst \textbf{Symmetrieoperation} oder \textbf{Decktransformation} von $\mathbb{F}$, falls gilt:
+    \begin{align}
+        w(\mathbb{F}) = \mathbb{F}. \nonumber
+    \end{align}
+\end{definition}
+
+Das bedeutet, die Figur $\mathbb{F}$ wird als Ganzes auf sich selbst abgebildet, wobei die Position einzelner Punkte (wie Ecken oder Kanten) innerhalb der Figur vertauscht werden darf. Wir bezeichnen mit 
+\begin{align}
+    S_{\mathbb{F}} := \{w \in \{\text{Isometrien auf} \ \mathbb{E}^n \} \mid w(\mathbb{F}) = \mathbb{F}\} \nonumber
+\end{align}
+die Menge der Decktransformationen von $\mathbb{F}$. Versehen mit der Verknüpfung $\circ$ (Hintereinanderausführung), bildet diese Menge die Symmetriegruppe $\mathcal{G}_{\mathbb{F}} = (S_{\mathbb{F}}, \circ)$.
+
+\begin{definition}
+    Wir definieren $\mathcal{G}_{\mathbb{F}}$ als die \textbf{Symmetriegruppe} von $\mathbb{F}$.
+\end{definition}
+
+
+\begin{example}[Symmetriegruppe des regulären Tetraeder] \label{ex:regulaeres_tetraeder}
+Das reguläre Tetraeder hat genau 24 Decktransformationen. Diese kann man auf mehrere Arten finden. Einerseits wissen wir, dass ein Tetraeder 4 Ecken besitzt. Daraus folgt, dass es $4! = 24$ Möglichkeiten für die Anordnung der Ecken gibt und somit auch 24 Abbildungen. Andererseits können wir die Abbildungen auch zählen. Das reguläre Tetraeder besitzt eine Drehgruppe $T$ der Ordnung $|T| = 12$. Die Elemente lassen sich geometrisch wie folgt klassifizieren (siehe Abbildung \ref{fig:tetraederotationsachsen})
+\begin{enumerate}
+    \item Die Identität $id$.
+    \item Typ $a$: 8 Drehungen um Achsen, die durch eine Ecke und den Mittelpunkt der gegenüberliegenden Fläche verlaufen (Winkel $120^\circ$ und $240^\circ$).
+    \item Typ $b$: 3 Drehungen um Achsen, welche die Mittelpunkte gegenüberliegender Kanten verbinden (Winkel $180^\circ$).
+\end{enumerate}
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.4\textwidth]{images/polyeder/tetraederrotationsachsen.png}
+\caption{Tetraeder mit eingezeichneten Rotationsachsen: Typ $a$ in grün und Typ $b$ in blau.}
+\label{fig:tetraederotationsachsen}
+\end{figure}
+Die 12 Decktransformationen des Tetraeders, die eine Spiegelung enthalten, lassen sich wie folgt klassifizieren:
+
+\begin{itemize}
+    \item \textbf{6 Ebenenspiegelungen}: Die Spiegelebenen verlaufen jeweils durch eine Kante und den Mittelpunkt der gegenüberliegenden Kante. Sie vertauschen genau zwei Eckpunkte, siehe Abbildung \ref{fig:tetraedespiegelachse}.
+    \item \textbf{6 Drehspiegelungen}: Diese bestehen aus einer Drehung um $90^\circ$ oder $270^\circ$ um eine Kantenmittelpunkt-Achse, gefolgt von einer Spiegelung an der Ebene senkrecht zu dieser Achse.
+\end{itemize}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.4\textwidth]{images/polyeder/tetraederspiegelachse.png}
+\caption{Tetraeder mit der Spiegelebene durch den Punkt $C$, Punkt $D$ und den Mittelpunkt $M_{AB}$ der Kante $AB$.}
+\label{fig:tetraedespiegelachse}
+\end{figure}
+Zusammen mit den 12 Drehungen bilden diese 24 Elemente die volle Symmetriegruppe des Tetraeders. Dies beendet unser Beispiel.
+\end{example}
+
+
+Die Decktransformationen des Tetraeders können wir in zwei Gruppen unterteilen: die orientierungserhaltenden und die orientierungsumkehrenden Abbildungen. Wir können uns einen Pfeil auf einer Seite des Tetraeders vorstellen, der im Uhrzeigersinn verläuft. Bei orientierungserhaltenden Decktransformationen bleibt dieser Pfeil im Uhrzeigersinn. Bei orientierungsumkehrenden Abbildungen wird im Bild der Abbildung der Pfeil im Gegenuhrzeigersinn verlaufen. Mathematisch lässt sich dies wie folgt definieren: 
+\begin{definition}
+    Eine Decktransformation $w \in S_{\mathbb{F}}$ heisst \textbf{orientierungserhaltend}, falls für ihre darstellende Matrix $R$ gilt:
+    \begin{align}
+        \det(R) = 1. \nonumber
+    \end{align}
+    Die Menge aller orientierungserhaltenden Decktransformationen bildet die \textbf{Drehgruppe} $G_{\mathbb{F}}^+$ der Figur $\mathbb{F}$.
+\end{definition}
+ Anschaulich bedeutet dies, dass die Figur allein durch physische Bewegungen im Raum (Drehungen) mit sich selbst zur Deckung gebracht werden kann, ohne sie dabei durch einen Spiegel zu betrachten oder "umzustülpen". Diese Eigenschaft können wir uns auch kombinatorisch vorstellen. Angenommen wir kehren zurück zu unserem Beispiel des Tetraeders. So sind Decktransformationen nichts anderes als Permutationen der Ecken. Bei Permutationen unterscheiden wir zwischen \textbf{geraden} (orientierungserhaltenden) und \textbf{ungeraden} (orientierungsumkehrenden) Permutationen. Gerade Permutationen lassen sich dabei durch eine gerade Anzahl an Vertauschungen zweier Ecken erreichen und ungerade Permutationen durch eine ungerade Anzahl an Vertauschungen. Mehr zu den Permutationen finden Sie in \cite{hungerbuehler_kombinatorik1}. \newline
+
+In der Folge beschränken wir uns auf die orientierugnserhaltenden Decktransformationen und schreiben
+\begin{itemize}
+    \item $T$ für die Symmetriegruppe vom Tetraeder,
+    \item $H$ für die Symmetriegruppe vom Hexaeder und 
+    \item $I$ für die Symmetriegruppe vom Ikosaeder.
+\end{itemize}
+
+\subsubsection{Aufgaben}
+\begin{exercise} \label{ex:rotationisometrie}
+    Zeigen Sie, dass die Rotation, um die $x$-Achse, eine Isometrie ist. 
+\end{exercise}
+
+\begin{exercise} \label{ex:hexaederikosaeder}
+    Überlegen Sie sich die orientierungserhaltenden Symmetrieoperationen 
+    \begin{itemize}
+        \item[a)] des regulären Hexaeders.
+        \item[b)] des regulären Ikosaeders.
+        \item[c)] des regulären Oktaeders.
+        \item[d)] des regulären Dodekaeders.
+    \end{itemize} Zur Visulisierung können Sie folgendes Tool auf GeoGebra für den Hexaeder \href{https://www.geogebra.org/m/S97XG6v7}{Interaktive Würfel-Animation} \cite{geogebra_cube_symmetry} und den Ikosaeder \href{https://www.geogebra.org/m/PA7zzxHa}{Interaktive Ikosaeder-Animation} \cite{geogebra_icosahedron}.
+\end{exercise}
 
 \subsubsection{Irreduzibilität}
 In diesem Abschnitt untersuchen wir eine grundlegende Eigenschaft der orientierungserhaltenden Symmetriegruppen des regulären Tetraeders, Hexaeders und Ikosaeders. Wir bezeichnen mit $T$ die Gruppe der orientierungserhaltenden Symmetrien (Drehgruppe) des Tetraeders sowie analog mit $H$ und $I$ jene des Hexaeders respektive des Ikosaeders.
@@ -107,7 +171,7 @@ Unter Verwendung der Matrixschreibweise für das Skalarprodukt $(\vec{a} \cdot \
 \end{alignat*}
 Da diese Gleichung für alle Vektoren $\vec{v}, \vec{w} \in \mathbb{R}^n$ erfüllt sein muss, folgt daraus unmittelbar die Matrizengleichung:
 \begin{align}
-    R^T R = I. \nonumber
+    R^T R = I_n. \nonumber
 \end{align}
 \end{proof}
 

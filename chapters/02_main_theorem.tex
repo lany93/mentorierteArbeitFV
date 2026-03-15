@@ -40,7 +40,7 @@ Beachte, dass im Gegensatz zum direkten Beweis, der explizite Wert der Summe in 
     Sei $P$ ein Polyeder mit Symmetriegruppe $\Omega = T, H$ oder $I$. TODO:...
 \end{proof}
 
-Beachte, dass der Tetraeder, Hexaeder und Ikosaeder alle nur eine Äquivalenzklasse haben. Um ein Objekt zu finden, welches eines der Symmetriegruppen $T$, $H$ oder $I$ hat und mehrere Äquivalenzklassen aufweist, braucht es etwas kreativität. Ein Beispiel ist das Chiral-Polyeder in Abbildung \ref{fig:chiralpolyeder}.
+Beachte, dass das Tetraeder, Hexaeder und Ikosaeder alle nur eine Äquivalenzklasse haben. Um ein Objekt zu finden, welches eines der Symmetriegruppen $T$, $H$ oder $I$ hat und mehrere Äquivalenzklassen aufweist, braucht es etwas kreativität. Ein Beispiel ist das Chiral-Polyeder in Abbildung \ref{fig:chiralpolyeder}.
 \begin{figure}[htp]
     \centering
     \includegraphics[width=10cm]{images/polyeder/chiral_polyeder.png}
@@ -50,14 +50,14 @@ Beachte, dass der Tetraeder, Hexaeder und Ikosaeder alle nur eine Äquivalenzkla
 \footnotetext{Quelle: \cite{hungerbuehler_symmetric_polyhedra}}
 
 \begin{example} \label{example:geradesprisma}
-    Eine Frage, die man sich stellen könnte, ist, wieso der Beweis für Lemma \ref{lemma:quadriertesummeinvarianzstrecken} nicht für andere Symmetriegruppen funktioniert. Dafür betrachten wir zum Beispiel ein gerades Prisma mit einem $n$-Eck als Grunfläche, siehe Abbildung \ref{fig:geradesprisma}. 
+    Eine Frage, die man sich stellen könnte, ist, wieso der Beweis für Lemma \ref{lemma:quadriertesummeinvarianzstrecken} nicht für andere Symmetriegruppen funktioniert. Dafür betrachten wir zum Beispiel ein gerades Prisma mit einem $n$-Eck als Grundfläche, siehe Abbildung \ref{fig:geradesprisma}. 
     \begin{figure}[htp]
     \centering
     \includegraphics[width=0.4\textwidth]{images/prisma_z_achse.png}
     \caption{Gerades Prisma mit einem $5$-Eck als Grundfläche.}
     \label{fig:geradesprisma}
 \end{figure}
-    Die Symmetriegruppe vom geraden Prisma ist die \textit{Diedergruppe $D_n$}, welches die Symmetriegruppe des regulären $n$-Ecks ist. Die orientierungserhaltenden Kongruenztransformationen sind die Drehungen, um die Achse, welche durch die Mittelpunkte, $M_{\text{Boden}}$ und $M_{\text{Decke}}$ der $5$-Ecke verläuft (Sowie der achse durch eine Kante und mittelpunkt). Somit ist die z-Achse ein nicht-trivialer invarianter Unterraum $U \subset \mathbb{R}^3$ und folglich $D_n$ nicht irreduzibel. Somit würde der Beweis nicht mehr funktionieren. Stattdessen berechnen wir zuerst einmal die Matrix $M:= \sum_{w \in \Omega} w(\vec{s}) w(\vec{s})^T$. Beachte, dass wir in diesem Fall zwei Orbits haben: Die Höhenkanten sowie die Kanten vom $n-$Eck, am Boden sowie an der Decke. Das heisst für die Matrix $M$ gilt
+    Die Symmetriegruppe vom geraden Prisma ist die \textit{Diedergruppe $D_n$}, welches die Symmetriegruppe des regulären $n$-Ecks ist. Die orientierungserhaltenden Kongruenztransformationen sind die Drehungen, um die Achse, welche durch die Mittelpunkte, $M_{\text{Boden}}$ und $M_{\text{Decke}}$ der $5$-Ecke verläuft (Sowie die Achsen, die durch die Mittelpunkte gegenüberliegender Kanten (oder Seiten) verlaufen). Somit ist die z-Achse ein nicht-trivialer invarianter Unterraum $U \subset \mathbb{R}^3$ und folglich $D_n$ nicht irreduzibel. Somit würde der Beweis nicht mehr funktionieren. Stattdessen berechnen wir zuerst einmal die Matrix $M:= \sum_{w \in \Omega} w(\vec{s}) w(\vec{s})^T$. Beachte, dass wir in diesem Fall zwei Orbits haben: Die Höhenkanten sowie die Kanten vom $n-$Eck, am Boden sowie an der Decke. Das heisst für die Matrix $M$ gilt
     \begin{align}
         M = M_{\text{Höhenkanten}} + M_{\text{Kanten n-Eck}}. \nonumber
     \end{align}
@@ -93,8 +93,8 @@ Eine interessante Beobachtung von Beispiel \ref{example:geradesprisma} ist, dass
     \caption{Pseudo-Rhombenkuboktaeder (elongated square gyrobicupola), Wikipedia \cite{elongated_square_gyrobicupola}.}
     \label{fig:Pseudorhombicuboctahedron}
 \end{figure}
-\begin{example} [Symmetriegruppe Pseudo-Rhombenkuboktaeder]
-    Eine unserer Behauptungen ist, dass der Pseudo-Rhombenkuboktaeder keine der Symmetriegruppen T, H oder I hat. Wenn wir das Pseudo-Rhombenkuboktaeder (siehe Abbildung \ref{fig:Pseudorhombicuboctahedron}) betrachten, stellen wir fest, dass wir eine Symmetrieachse 4.\ Orndung haben. Diese geht vertikal durch das obere und untere rote Quadrat ("Deckel" und "Boden"). Da die Symmetriegruppe T gar keine Symmetrieachse 4.\ Ordnung hat, können wir ausschliessen, dass der Pseudo-Rhombenkuboktaeder die Symmetriegruppe T hat. Bemerke, dass das Pseudo-Rhombenkuboktaeder genau eine Symmetrieachse 4.\ Ordnung besitzt. Analog können wir auch die Symmetriegruppen H und I ausschliessen (siehe Aufgaben \ref{ex:PseudoRhombenkuboktaeder_Symmetriegruppe}).
+\begin{example} [Symmetriegruppe Pseudo-Rhombenkuboktaeder] \label{example:pseudorhombenkuboktaeder}
+    Eine unserer Behauptungen ist, dass der Pseudo-Rhombenkuboktaeder keine der Symmetriegruppen T, H oder I hat. Wenn wir das Pseudo-Rhombenkuboktaeder (siehe Abbildung \ref{fig:Pseudorhombicuboctahedron}) betrachten, stellen wir fest, dass wir eine Symmetrieachse 4.\ Ordnung haben. Diese geht vertikal durch das obere und untere rote Quadrat ("Deckel" und "Boden"). Da die Symmetriegruppe T gar keine Symmetrieachse 4.\ Ordnung hat, können wir ausschliessen, dass der Pseudo-Rhombenkuboktaeder die Symmetriegruppe T hat. Bemerke, dass das Pseudo-Rhombenkuboktaeder genau eine Symmetrieachse 4.\ Ordnung besitzt. Analog können wir auch die Symmetriegruppen H und I ausschliessen (siehe Aufgaben \ref{ex:PseudoRhombenkuboktaeder_Symmetriegruppe}).
 \end{example}
 
 Es bleibt also noch zu zeigen, dass das Pseudo-Rhombenkuboktaeder die Gleichung 
@@ -103,23 +103,52 @@ Es bleibt also noch zu zeigen, dass das Pseudo-Rhombenkuboktaeder die Gleichung
 \begin{proposition}
     Sei $\Pi_{E}:\mathbb{R}^3 \rightarrow E$ die orthogonale Projektion auf eine Ebene $E \subset \mathbb{R}^3$. Dann ist die Summe der Quadrate der projizierten Kanten von einem Pseudo-Rhombenkuboktaeder $P$ unabhängig von der Ebene $E$, i.e. 
     \begin{align}
-        \sum_{k \in K_{P}} ||\Pi_{E_1}(k)||^2 = \sum_{k \in K_P} ||\Pi_{E_2}(k)||^2 \quad .
+        \sum_{k \in K_{P}} ||\Pi_{E_1}(k)||^2 = \sum_{k \in K_P} ||\Pi_{E_2}(k)||^2,
     \end{align}
+    wobei $K_{P}$ die Menge der Kanten von $P$ ist.
 \end{proposition}
 \begin{proof}
-    TODO:...
+    Wir betrachten, wie bereits im Beweis zum Lemma \ref{lemma:quadriertesummeinvarianzstrecken}, die Gleichung \eqref{eq:summemitmatrixM}
+    
+    \begin{align}
+        \sum_{w \in \Omega_P} \|\Pi_{E}w(\vec{s})\|^2 = |\Omega|  \|\vec{s}\|^2 - \vec{n}_E^T M \vec{n}_E, \nonumber 
+    \end{align}
+    wobei $\Omega_P$ die Symmetriegruppe von $P$ ist. Wir zeigen, dass die Matrix $M$ wieder ein vielfaches der Einheitsmatrix $I_3$ ist. Wir betrachten also     $$M_P = \sum_{k \in K_P} \vec{v}_k \vec{v}_k^T,$$ wobei $\vec{v}_k$ die Richtungsvektoren der Kanten des Pseudo-Rhombenkuboktaeders $P$ sind. Es ist bekannt, dass $P$ aus dem regulären Rhombenkuboktaeder $P_R$ hervorgeht, indem eine der quadratischen Kuppeln (mit Kantenmenge $K_{\text{Kuppel}}$) um den Winkel $\phi = 45^\circ$ um die Hauptsymmetrieachse ($z$-Achse) gedreht wird, siehe Anhang \ref{sec:rhombenkuboktaeder}. Die Kantenmenge des regulären Körpers können wir somit in einen unveränderten Basis-Teil $K_{\text{Basis}}$ und die Kuppel $K_{\text{Kuppel}}$ teilen. Aufgrund der Oktaedersymmetrie vom regulären Rhombenkuboktaeder $P_R$ gilt
+    \begin{align}
+        M_{P_R} = M^{'}_{\text{Basis}} + M^{'}_{\text{Kuppel}} = \lambda I_3 . \nonumber
+    \end{align}
+    Da die Basis für das $P$ und $P_R$ identisch sind, gilt
+\begin{align}
+        M^{'}_{\text{Basis}} = M_{\text{Basis}} \nonumber
+    \end{align}
+    Für die Kuppel folgt zudem
+    \begin{align}
+        M^{'}_{\text{Kuppel}} &= \sum_{k \in K_{\text{Kuppel}}} \left(R_z(45^\circ)\vec{v}_k\right) \left(R_z(45^\circ)\vec{v}_k\right)^T \nonumber \\
+        &= R_z(45^\circ) \left(\sum_{k \in K_{\text{Kuppel}}} \vec{v}_k \vec{v}_k^T \right) R_z(45^\circ)^T \nonumber \\
+        &=R_z(45^\circ) M_{\text{Kuppel}} R_z(45^\circ)^T \nonumber
+    \end{align}
+
+    
+
+    Die Drehsymmetrien der isolierten Kuppel $K_{Kuppel}$ ist identisch zur Symmetriegruppe der zyklischen Gruppe $C_{4}$ bezüglich der $z$-Achse. Dies erzwingt für die Matrix $M_{\text{Kuppel}}$ der Kuppel die Diagonalgestalt $$M_{\text{Kuppel}} = \text{diag}(\alpha, \alpha, \beta).$$ Da die $x$- und $y$-Einträge identisch sind, kommutiert $M_{\text{Kuppel}}$ mit jeder beliebigen Rotation $R_z(\phi)$ um die $z$-Achse. Die Drehung der Kuppel um $45^\circ$ ändert die Matrix für die Kuppel nicht und es folgt
+    \begin{align}
+       M^{'}_{\text{Kuppel}} = M_{\text{Kuppel}}. \nonumber
+    \end{align}
+    
+    Daraus folgt unmittelbar für die Gesamtmatrix des Pseudo-Rhombenkuboktaeders $P$:
+    \begin{align}
+        M_P = M_{P_R} = \lambda I_3 \nonumber
+    \end{align}
+    
+    Da $M_P = \lambda I_3$ ein skalares Vielfaches der Einheitsmatrix ist, gilt für die Summe der quadrierten Längen der auf eine Ebene $E$ (mit Einheitsnormalenvektor $\vec{n}$) projizierten Kanten:
+    \begin{align}
+        \sum_{k \in K_P} ||\Pi_E(\vec{v}_k)||^2 &= \text{konstant}, \nonumber
+    \end{align}
+    womit die Aussage folgt.
 \end{proof}
 
 \newpage
-
-\subsection{Polygone}
-
-\begin{theorem} \label{satz:polygon_unabhängig_von_rotationswinkel}
-    Sei $P$ ein Polygon in der Ebene $E_1 \subset \mathbb{R}^3$ mit Symmetriegruppe $C_n, n\geq 3$, und $\Tilde{P}$ die Abbildung einer Rotation mit Winkel $\mu$ von $P$ in der Ebene $E_1$. Zudem sei $\Sigma_{E_2}: \mathbb{R}^3 \rightarrow \Sigma_2$ die Orthogonalprojektion auf die Ebene $E_2 \subset \mathbb{R}^3$. Dann ist die Summe der Quadrate der Kantenlängen von der Projektion abhängig vom Winkel zwischen den beiden Ebenen $E_1$ und $E_2$ aber unabhängig vom Rotationswinkel $\mu$.
-\end{theorem}
-
-\begin{proof}
-    TODO:...
-\end{proof}
-
 \input{chapters/02_main_theorem/exercises}
+\newpage
+\input{chapters/02_main_theorem/gekrümmtelinien.tex}
+% \input{chapters/02_main_theorem/exercises_gekrümmtelinien.tex}

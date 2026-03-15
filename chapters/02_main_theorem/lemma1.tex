@@ -29,11 +29,18 @@ Anstatt die Summe der Kantenlängen unter der Orthogonalprojektion, siehe Gleich
         \sum_{w \in \Omega} |\vec{n}_E \cdot w(\vec{s})|^2 &= \sum_{w \in \Omega} \vec{n}_E^T \left( w(\vec{s}) w(\vec{s})^T \right) \vec{n}_E \nonumber \\
         &= \vec{n}_E^T \left( \sum_{w \in \Omega} w(\vec{s}) w(\vec{s})^T \right) \vec{n}_E.
     \end{align}
-    Wir definieren die Matrix $$M := \sum_{w \in \Omega} w(\vec{s}) w(\vec{s})^T \in \mathbb{R}^{3 \times 3}.$$ Diese Matrix ist symmetrisch ($M=M^T$) und kommutiert mit jeder Drehung $R \in \Omega$:
+    Wir definieren die Matrix $$M := \sum_{w \in \Omega} w(\vec{s}) w(\vec{s})^T \in \mathbb{R}^{3 \times 3}.$$ 
+        Das heisst unsere Summe aus Gleichung \eqref{eq:sum_line_segment_projection_independent_of_plane} lässt sich wie folgt schreiben
+       \begin{align} \label{eq:summemitmatrixM}
+        \sum_{w \in \Omega} \|\Pi_{E}w(\vec{s})\|^2 = |\Omega|  \|\vec{s}\|^2 - \vec{n}_E^T M \vec{n}_E.
+    \end{align}
+    
+    
+    Die Matrix $M$ ist symmetrisch ($M=M^T$) und kommutiert mit jeder Drehung $R \in \Omega$:
     \begin{align}
         R M R^T &= \sum_{w \in \Omega} R w(\vec{s}) w(\vec{s})^T R^T = \sum_{w \in \Omega} (R w(\vec{s})) (R w(\vec{s}))^T. \nonumber
     \end{align}
-    Da die Multiplikation mit $R$ von links die Gruppenelemente lediglich permutiert, gilt $$\sum_{w \in \Omega} (R w(\vec{s})) (R w(\vec{s}))^T = M.$$ Wir wir bereits in Abschnitt \ref{sec:orthogonalrotation} gesehen haben, sind Drehungen orthogonal sind und es folgt $$RM = MR.$$
+    Da die Multiplikation mit $R$ von links die Gruppenelemente lediglich permutiert, gilt $$\sum_{w \in \Omega} (R w(\vec{s})) (R w(\vec{s}))^T = M.$$ Wie wir bereits in Abschnitt \ref{sec:orthogonalrotation} gesehen haben, sind Drehungen orthogonal und es folgt $$RM = MR.$$
 
     Gemäss dem Spektralsatz (siehe Anhang \ref{sec:spektralsatzlinearealgebra}) besitzt die symmetrische Matrix $M$ einen reellen Eigenwert $\lambda$ mit zugehörigem Eigenraum $V_\lambda \neq \{0\}$. Für einen Vektor $\vec{v} \in V_\lambda$ gilt aufgrund der Kommutativität:
     \begin{align}

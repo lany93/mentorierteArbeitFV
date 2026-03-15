@@ -1,9 +1,32 @@
 \section{Lösungen}
 
 \subsubsection*{Aufgabe \ref{ex:verificationeinstiegesbeispielEbene3}}
+Die Ebene $E_3$ hat den Normalenvektor 
+\begin{align}
+    \vec{n}_{E_3} = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} .\nonumber
+\end{align}
+Aufgrund der Symmetrie des regulären Hexaeders können wir bei dieser Projektion zwei verschiedene Gruppen von Kanten unterscheiden:
+\begin{itemize}
+    \item Acht Kanten liegen parallel zur Ebene $E_3$ (bzw. stehen orthogonal auf dem Normalenvektor $\vec{n}_{E_2}$), wie beispielsweise die Kante $\overline{CD}$.
+    \item Die restlichen vier Kanten sind parallel zum Normalenvektor $\vec{n}_{E_3}$ ein, wie beispielsweise die Kante $\overline{CG}$.
+\end{itemize}
+Somit folgt
+\begin{align}
+    \sum_{k \in K_W} \|\Pi_{E_2}(\vec{v}_k)\| = 8 \cdot 1 + 4 \cdot  0= 8. \nonumber
+\end{align}
 
 \subsubsection*{Aufgabe \ref{ex:geradesprisma}}
-
+Wir können die Projektionen $\Pi_{E_i}: \mathbb{R}^3 \rightarrow E_i$ auf die Ebenen
+\begin{align}
+    E_1&: \ x=0, \nonumber \\
+    E_2&: \ y=0 \nonumber
+\end{align}
+betrachten. Somit folgt
+\begin{align}
+    \sum_{k \in K_W} \|\Pi_{E_1}(\vec{v}_k)\| &= 8a \nonumber \\
+    \sum_{k \in K_W} \|\Pi_{E_2}(\vec{v}_k)\| &= 4(a + h), \nonumber
+\end{align}
+wobei $a$ die Kantenlänge der Grundfläche und $h$ die Höhe des regulären Prisma ist. Da $a \neq h$ sind die Summen nicht identisch. Falls $a=h$ ist, so haben wir einen regulären Hexaeder, und die Summe stimmt überein.
 \subsubsection*{Aufgabe \ref{ex:polyederalltag}}
 \begin{itemize}
     \item Bienenwaben: Wenn man sie als dreidimensionale Röhren betrachtet, sind sie hexagonale Prismen, die am Ende oft durch eine komplexe Polyeder-Form (eine Art schiefes Rhomben-Dodekaeder) abgeschlossen werden.
@@ -12,18 +35,80 @@
     \item Moderne Hochhäuser: Viele Wolkenkratzer sind im Grunde riesige Quader oder bestehen aus einer Kombination verschiedener Prismen.
 \end{itemize}
 
-An dieser Stelle ist anzumerken, dass wir bei den Beispielen aus Alltag, Natur und Architektur eine Idealisierung vornehmen. Während ein mathematisches Polyeder exakt ebene Flächen und unendlich scharfe Kanten voraussetzt, weisen reale Objekte stets kleine Abweichungen auf.an den Ecken.
+An dieser Stelle ist anzumerken, dass wir bei den Beispielen aus Alltag, Natur und Architektur eine Idealisierung vornehmen. Während ein mathematisches Polyeder exakt ebene Flächen und unendlich scharfe Kanten voraussetzt, weisen reale Objekte stets kleine Abweichungen auf an den Ecken.
 
 
 \subsubsection*{Aufgabe \ref{ex:polyederbeispiele}}
 \begin{itemize}
-    \item[a)] Der \textit{Adidas Fevernova} basiert zwar topologisch auf einem abgestumpften Ikosaeder (einem Polyeder), ist aber als Spielball aufgepumpt und somit gekrümmt. Nach der strengen mathematischen Definition (nur ebene Flächen) ist der physische Ball also kein Polyeder. 
-    \item[b)] Ein idealer mathematischer Würfel ist ein Polyeder, aber fast alle echten Spielwürfel haben abgerundete Ecken und Kanten, um besser zu rollen – damit sind sie streng genommen keine Polyeder mehr. Dementsprechend "Nein", aufgrund der abgerundeten Ecken. Falls es sich jeodch um einen Casino-Präzisionswürfel (scharfe Kanten) handelt, wäre die Antwort „Ja“. 
+    \item[a)] Der \textit{Adidas Fevernova} basiert zwar topologisch auf einem abgestumpften Ikosaeder (einem regulären Polyeder), ist aber als Spielball aufgepumpt und somit gekrümmt. Nach der strengen mathematischen Definition (nur ebene Flächen) ist der physische Ball also kein Polyeder. 
+    \item[b)] Ein idealer mathematischer Würfel ist ein regulärer Polyeder, aber fast alle echten Spielwürfel haben abgerundete Ecken und Kanten, um besser zu rollen – damit sind sie streng genommen keine Polyeder mehr. Dementsprechend "Nein", aufgrund der abgerundeten Ecken. Falls es sich jeodch um einen Casino-Präzisionswürfel (scharfe Kanten) handelt, wäre die Antwort „Ja“. 
 \end{itemize}
 
-\subsubsection*{Aufgabe \ref{ex:verifizierungwuerfelprojektion}}
+
+\subsubsection*{Aufgabe \ref{ex:rotationisometrie}}
+Es gilt zu zeigen, dass
+\begin{align}
+    \langle R\vec{x}, R\vec{y} \rangle \overset{!}{=} \langle \vec{x}, \vec{y} \rangle .\nonumber
+\end{align}
+Wir können explizit ausrechnen, dass
+$$R^T R = I_3.$$
+Somit folgt
+\begin{align}
+    \langle R\vec{x}, R\vec{y} \rangle = (R\vec{x})^T (R\vec{y}) = \vec{x}^T R^T R \vec{y} = \langle \vec{x}, \vec{y} \rangle .\nonumber
+\end{align}
+
+
+\subsubsection*{Aufgabe \ref{ex:hexaederikosaeder}}
 \begin{itemize}
-    \item[a)]\begin{align}
+    \item[a)] Das reguläre Hexaeder (Würfel) besitzt insgesamt 48 Decktransformationen. Schränkt man sich auf die orientierungserhaltenden Abbildungen ein, erhält man die Drehgruppe $H$ der Ordnung $|H| = 24$. Die Elemente lassen sich geometrisch wie folgt klassifizieren (siehe Abbildung \ref{fig:hexaedersymmetrieachsen}): \begin{itemize}
+\item Die Identität $id$.
+\item Typ $a$: 9 Drehungen um Achsen, die durch die Mittelpunkte gegenüberliegender Flächen verlaufen. Hierbei gibt es 3 Achsen mit jeweils drei möglichen Drehwinkeln ($90^\circ, 180^\circ$ und $270^\circ$).
+\item Typ $b$: 6 Drehungen um Achsen, welche die Mittelpunkte gegenüberliegender Kanten verbinden. Hierbei gibt es 6 Achsen mit jeweils einem möglichen Drehwinkel ($180^\circ$).
+\item Typ $c$: 8 Drehungen um Achsen, die durch gegenüberliegende Eckpunkte (Raumdiagonalen) verlaufen. Hierbei gibt es 4 Achsen mit jeweils zwei möglichen Drehwinkeln ($120^\circ$ und $240^\circ$).
+\end{itemize}
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/polyeder/würfelsymmetrieachsen.png}
+    \caption{Symmetrieachsen des regulären Hexaeders.}
+    \label{fig:hexaedersymmetrieachsen}
+\end{figure}
+
+
+    \item[b)] Das reguläre Ikosaeder besitzt eine Drehgruppe $I$ der Ordnung $|I| = 60$. Die Elemente lassen sich geometrisch wie folgt klassifizieren (siehe Abbildung \ref{fig:ikosaederdrehachsen}):\begin{enumerate}\item Die Identität $id$.\item Typ $a$: 24 Drehungen um Achsen, die durch gegenüberliegende Eckpunkte verlaufen. Da das Ikosaeder 12 Ecken besitzt, gibt es 6 solcher Achsen. Pro Achse existieren vier mögliche Drehwinkel ($72^\circ, 144^\circ, 216^\circ$ und $288^\circ$).\item Typ $b$: 20 Drehungen um Achsen, die durch die Mittelpunkte gegenüberliegender Flächen verlaufen. Da das Ikosaeder 20 Flächen besitzt, gibt es 10 solcher Achsen. Pro Achse existieren zwei mögliche Drehwinkel ($120^\circ$ und $240^\circ$).\item Typ $c$: 15 Drehungen um Achsen, welche die Mittelpunkte gegenüberliegender Kanten verbinden. Da das Ikosaeder 30 Kanten besitzt, gibt es 15 solcher Achsen mit jeweils einem möglichen Drehwinkel ($180^\circ$).\end{enumerate}
+    \item[] 
+    \begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/polyeder/ikosaederdrehachsen.png}
+    \caption{Symmetrieachsen des regulären Ikosaeders.}
+    \label{fig:ikosaederdrehachsen}
+\end{figure}
+
+\item[c)] Die Symmetriegruppe des regulären Oktaeders ist identisch zur Symmetrieruppe des regulären Hexaeders. 
+\item[d)] Die Symmetriegruppe des regulären Dedokaeders ist identisch zur Symmetrieruppe des regulären Ikosaeders. 
+\end{itemize}
+
+
+\subsubsection*{Aufgabe \ref{ex:verifizierungwuerfelprojektion}}
+Für die Orthogonalprojektion auf die Ebene $E_1$ folgt:
+\begin{align}
+        \Pi_{E_1}(\vec{v}_{CG}) &= \left(I - (\vec{n} \cdot \vec{n}^T)\right) \vec{v}_{CG} \nonumber \\
+        &= \left(\left(\begin{matrix}
+            1 & 0 & 0 \\
+            0 & 1 & 0 \\
+            0 & 0 & 1
+            \end{matrix}\right) - \frac{1}{3}\begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} \begin{pmatrix} 1 & 1 & 1 \end{pmatrix}\right) \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} \nonumber \\
+        &= \left(\begin{matrix}
+            \frac{2}{3} & -\frac{1}{3} & -\frac{1}{3} \\
+            -\frac{1}{3} & \frac{2}{3} & -\frac{1}{3} \\
+            -\frac{1}{3} & -\frac{1}{3} & \frac{2}{3}
+            \end{matrix}\right)\begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} \nonumber \\
+            &=\begin{pmatrix} -\frac{1}{3} \\ -\frac{1}{3} \\ \frac{2}{3} \end{pmatrix} \nonumber
+    \end{align}
+
+Und somit $$\|\Pi_{E_1}(\vec{v}_{CG})\| = \sqrt{\left( -\frac{1}{3}\right)^2+\left( -\frac{1}{3}\right)^2+\left( \frac{2}{3}\right)^2} = \frac{\sqrt{6}}{3}.$$
+Für die Ebene $E_2$ folgt:
+\begin{align}
         \Pi_{E_2} &= I - \vec{n}_{E_2} \cdot \vec{n}_{E_2} ^T\nonumber \\
         &=  \left(\begin{matrix}
             1 & 0 & 0 \\
@@ -62,21 +147,10 @@ und
             0 & 0 & 1
             \end{matrix}\right) \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} =  \begin{pmatrix} \frac{1}{2} \\[3pt] \frac{1}{2} \\[3pt] 0 \end{pmatrix} \quad . \nonumber
 \end{align}
-\item[b)]     \begin{align}
-        \Pi_{E_1}(\vec{v}_{CG}) &= \left(I - (\vec{n} \cdot \vec{n}^T)\right) \vec{v}_{CG} \nonumber \\
-        &= \left(\left(\begin{matrix}
-            1 & 0 & 0 \\
-            0 & 1 & 0 \\
-            0 & 0 & 1
-            \end{matrix}\right) - \frac{1}{3}\begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} \begin{pmatrix} 1 & 1 & 1 \end{pmatrix}\right) \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} \nonumber \\
-        &= \left(\begin{matrix}
-            \frac{2}{3} & -\frac{1}{3} & -\frac{1}{3} \\
-            -\frac{1}{3} & \frac{2}{3} & -\frac{1}{3} \\
-            -\frac{1}{3} & -\frac{1}{3} & \frac{2}{3}
-            \end{matrix}\right)\begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} \nonumber \\
-            &=\begin{pmatrix} -\frac{1}{3} \\ -\frac{1}{3} \\ \frac{2}{3} \end{pmatrix} \nonumber
-    \end{align}
-\end{itemize}
+Und somit folgt 
+$$ \|\Pi_{E_2}(\vec{v}_{CG})\| = 1 $$ 
+respektive
+$$ \|\Pi_{E_2}(\vec{v}_{GH}))\| = \frac{1}{\sqrt{2}}.$$ 
 
 
 \subsubsection*{Aufgabe \ref{ex:äquivalenzklassen_regulärer_hexaeder}}
@@ -86,9 +160,11 @@ Sei $P \subset \mathbb{R}^3$ ein Würfel und $H$ die Menge der orientierungserha
 \end{align}
 für den Orbit einer Kante $k$. Das heisst im Orbit von Kante $\overline{AB}$ im Würfel liegen 12 Kanten. Anders formuliert könnten wir auch sagen, dass der Würfel genau einen Orbit bzw. Äquivalenzklasse unter $H$ hat.
 
-\subsubsection*{Aufgabe \ref{ex:äquivalenzklassen}}
 \subsubsection*{Aufgabe \ref{ex:notwendigkeitsymmetrie}}
-
+Bei der folgenden Gleichheit wird die Symmetrieeigenschaft verwendet: 
+\begin{align} 
+    \sum_{w \in \Omega} \|\Pi_{\Sigma}w(s)\|^2  = \sum_{k=0}^2 \sum_{i=0}^3 \|\Pi_{\Sigma}A_iR^ks\|^2 = ... \nonumber
+\end{align}
 \subsubsection*{Aufgabe \ref{ex:alternativbeweislemma}}
 \begin{itemize}
     \item[a)] Die Matrix $M$ muss die Gleichung 
@@ -134,7 +210,16 @@ Daraus folgt
 
 
 \subsubsection*{Aufgabe \ref{ex:notwendigkeitorthogonaleprojektionen}}
+Beim Berechnen von den folgenden Gleichheit
+\begin{align} 
+    ...  = \sum_{k=0}^2 \sum_{i=0}^3 \|\Pi_{\Sigma}A_iR^ks\|^2 = 8 \|s\| \nonumber
+\end{align}
+wird die Orthogonalprojektion verwendet.
+
+
+
 \subsubsection*{Aufgabe \ref{ex:umkehrung_satz}}
+Nein, siehe Beispiel \ref{example:geradesprisma} und \ref{example:pseudorhombenkuboktaeder}.
 
 \subsubsection*{Aufgabe \ref{ex:summe_einheitswurzel}}
 Wir definieren $r:=e^{i4\pi/n} \in \mathbb{C}$. Falls $r \neq 1$ gilt, erhalten wir

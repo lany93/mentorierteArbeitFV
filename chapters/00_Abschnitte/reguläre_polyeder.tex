@@ -15,11 +15,11 @@ Die Beschäftigung mit regulären Polyedern gehört zu den ältesten Themen der 
 Bevor wir die Besonderheiten der Symmetrie untersuchen, müssen wir klären, was genau ein Polyeder im mathematischen Sinne definiert. Ein Polyeder (von griechisch \textit{poly} für „viel“ und \textit{hedra} für „Sitz“ oder „Fläche“) ist ein dreidimensionaler Körper, dessen Oberfläche aus ebenen Polygonen (Vielecken) besteht. Nach Cromwell lässt sich ein Polyeder als eine Ansammlung von Flächen beschreiben, die so miteinander verbunden sind, dass sie einen abgeschlossenen Raumteil umschliessen. Dabei müssen zwei wesentliche Bedingungen erfüllt sein:
 
 \begin{itemize}
-    \item Jede Kante gehört zu genau zwei Flächen.
+    \item Jede \textbf{Kante} gehört zu genau zwei Flächen.
     \item Der Körper ist zusammenhängend: Man kann von jeder Fläche zu jeder anderen gelangen, indem man über die Kanten wandert.
 \end{itemize}
 
-Die Schnittpunkte, an denen mindestens drei Flächen (und damit mindestens drei Kanten) aufeinandertreffen, bezeichnen wir als Ecken. Ein Tetraeder besitzt beispielsweise 6 Kanten und 4 Ecken (siehe Abbildung \ref{fig:tetraeder}).
+Die Schnittpunkte, an denen mindestens drei Flächen (und damit mindestens drei Kanten) aufeinandertreffen, bezeichnen wir als \textbf{Ecken}. Ein Tetraeder besitzt beispielsweise 6 Kanten und 4 Ecken (siehe Abbildung \ref{fig:tetraeder}).
 
 \begin{figure}[htp]
 \centering
@@ -30,25 +30,18 @@ Die Schnittpunkte, an denen mindestens drei Flächen (und damit mindestens drei 
 
 
 
-Alltagsbeispiele für Polyeder sind etwa Pakete oder würfelförmige Regale. Sobald jedoch gekrümmte Begrenzungsflächen vorhanden sind – wie bei einer Kugel oder einer Getränkedose –, handelt es sich nicht mehr um ein Polyeder (siehe Abbildung \ref{fig:auswahl_polyeder}).
+Alltagsbeispiele für Polyeder sind etwa Pakete oder würfelförmige Regale. Sobald jedoch gekrümmte Begrenzungsflächen vorhanden sind – wie bei einer Kugel oder einer Getränkedose – handelt es sich nicht mehr um ein Polyeder (siehe Abbildung \ref{fig:auswahl_polyeder}).
 
 \begin{figure}[htbp]
      \centering
-     \begin{subfigure}[b]{0.3\textwidth}
+     \begin{subfigure}[b]{0.45\textwidth}
          \centering
          \includegraphics[width=\textwidth]{images/polyeder/kuppelhaus_düsseldorf.jpg}
          \caption{Kuppelhaus des botanischen Gartens in Düsseldorf.}
          \label{fig:kuppelhaus_düsseldorf}
      \end{subfigure}
      \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{images/polyeder/kallax_ikea.png}
-         \caption{Regalsystem.}
-         \label{fig:kallaxikea}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
+     \begin{subfigure}[b]{0.45\textwidth}
          \centering
          \includegraphics[width=\textwidth]{images/polyeder/paket.png}
          \caption{Quaderförmiges Paket.}
@@ -64,10 +57,19 @@ Damit ein Polyeder als \textit{regulär} eingestuft wird, müssen laut Coxeter z
     \item \textbf{Flächenregularität}: Alle Seitenflächen sind kongruente, reguläre Vielecke. Dies bedeutet, dass alle Kanten gleich lang und alle Innenwinkel der Flächen identisch sind.
     \item \textbf{Eckenregularität}: An jeder Ecke des Polyeders treffen stets gleich viele Flächen in der immer gleichen Anordnung zusammen.
 \end{itemize}
-
+\begin{comment}
 Diese Struktur wird mathematisch durch das Schläfli-Symbol $\{p, q\}$ zusammengefasst. Dabei steht $p$ für die Anzahl der Ecken einer einzelnen Fläche und $q$ für die Anzahl der Flächen, die an einer Ecke zusammentreffen. Ein Würfel besteht aus Quadraten ($p=4$), von denen drei an jeder Ecke zusammenkommen ($q=3$), was zum Symbol $\{4, 3\}$ führt. 
+\end{comment}
+Das Quaderförmige Paket in Abbildung \ref{fig:Paket} erfüllt die Flächenregularität zum Beispiel nicht, da die Seitenflächen nicht kongruente, reguläre Vielecke sind. Ein Polyeder, welches die Eckenregularität verletzt, ist zum Beispiel ein gestrecktes Oktaeder, siehe Abbildung \ref{fig:oktaeder}.
+An den Ecken $E$ und $A$ treffen zwar jeweils vier Dreiecke aufeinander, jedoch is der Winkel zwischen den Kanten an der Ecke $E$ viel spitzer als an der Ecke $A$. Somit ist die Anordnung nicht diesselbe.
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.4\textwidth]{images/polyeder/oktaeder.png}
+\caption{Gestrecktes Okateder mit $a \neq s$.}
+\label{fig:oktaeder}
+\end{figure}
 
-Von diesen regulären Polyedern, auch als Platonische Körper bekannt, existieren exakt fünf:
+Von den regulären Polyedern, auch als Platonische Körper bekannt, existieren exakt fünf:
 \begin{itemize}
     \item \textbf{Reguläres Tetraeder}: (griech. \textit{tetra} = vier) Begrenzt von vier regulären Dreiecken.
     \item \textbf{Reguläres Hexaeder}: (griech. \textit{hex} = sechs) Der Würfel, begrenzt von sechs Quadraten.
@@ -91,7 +93,7 @@ Es existieren verschiedene Beweise dafür, dass es genau fünf reguläre Polyede
     Prüfen Sie anhand der Definition eines Polyeders, ob es sich bei den folgenden Objekten um ein solches handelt:
     \begin{itemize}
         \item[a)] der \textit{Adidas Fevernova} (offizieller Fussball der WM 2002),
-        \item[b)] ein klassischer Spielwürfel mit abgerundeten Ecken.
+        \item[b)] ein klassischer Spielwürfel.
     \end{itemize}
     Begründen Sie Ihre Antwort. Handelt es sich zudem um \textbf{reguläre} Polyeder?
 \end{exercise}
