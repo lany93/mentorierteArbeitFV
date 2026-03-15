@@ -1,0 +1,52 @@
+\begin{lemma} \label{lemma:quadriertesummeinvarianzstrecken}
+    Sei $s \subset \mathbb{R}^3$ eine Strecke, $\Omega$ einer der Symmetriegruppen $T$, $H$, $I$ und $\Pi_{E}:\mathbb{R}^3 \rightarrow E$ die orthogonale Projektion auf eine Ebene $E \subset \mathbb{R}^3$. Dann ist die Summe  
+    \begin{align} \label{eq:sum_line_segment_projection_independent_of_plane}
+        \sum_{w \in \Omega} \|\Pi_{E}w(s)\|^2  
+    \end{align}
+    unabhängig von $E$.
+\end{lemma}
+
+\begin{proof} 
+TODO: brute-force approach... 
+\end{proof}
+
+Anstatt die Summe der Kantenlängen unter der Orthogonalprojektion, siehe Gleichung \eqref{eq:sum_projection_independent_of_plane}, direkt auszurechnen, können wir auch über die Irreduzibilität von den Symmetriegruppen gehen.
+\begin{proof}
+    Sei $\vec{s} \in \mathbb{R}^3$ der Richtungsvektor der Strecke $s$. Wir nutzen die Zerlegung aus Gleichung \eqref{eq:vektor_parallel_senkrecht} und die Darstellung der Projektionslänge aus \eqref{eq:projectionwithvectorandnormal}. Für ein beliebiges $w \in \Omega$ gilt:
+    \begin{align} 
+        \|\Pi_{E}w(\vec{s})\|^2 &= \|w_{\parallel}(\vec{s})\|^2 \nonumber \\
+        &= \|w(\vec{s})\|^2 - \|w(\vec{s})_{\perp}\|^2 \nonumber \\
+        &= \|w(\vec{s})\|^2 - \|\left(\vec{n}_E \cdot w(\vec{s})\right)\vec{n}_E\|^2, \nonumber
+    \end{align}
+    wobei $\vec{n}_E$ der Normalenvektor der Ebene $E$ ist, d.h. $\|\vec{n}_E\| = 1$. Da alle Abbildungen $w \in \Omega$ Drehungen und somit Isometrien (längenerhaltend) sind, gilt $\|w(s)\|^2 = \|\vec{s}\|^2$. Summiert über die gesamte Gruppe ergibt sich:
+    \begin{align} 
+        \sum_{w \in \Omega} \|\Pi_{E}w(\vec{s})\|^2 &= \sum_{w \in \Omega} \left( \|w(\vec{s})\|^2 - \|\left(\vec{n}_E \cdot w(\vec{s})\right)\vec{n}_E\|^2 \right) \nonumber \\
+        &= \sum_{w \in \Omega} \left( \|\vec{s}\|^2 - |\vec{n}_E \cdot w(\vec{s})|^2 \|\vec{n}_E \|^2\right) \nonumber \\
+        &= |\Omega|  \|\vec{s}\|^2 - \sum_{w \in \Omega} |\vec{n}_E \cdot w(\vec{s})|^2. \nonumber
+    \end{align}
+    Der erste Term $|\Omega| \cdot \|\vec{s}\|^2$ ist konstant. Um die Unabhängigkeit von $E$ zu zeigen, müssen wir nachweisen, dass auch der zweite Term unabhängig vom Normalenvektor $\vec{n}_E$ ist. Unter Verwendung der Identität $(\vec{a} \cdot \vec{b})^2 = \vec{a}^T(\vec{b}\vec{b}^T)\vec{a}$ erhalten wir:
+    \begin{align} \label{eq:summevectormatrixnormal_revised}
+        \sum_{w \in \Omega} |\vec{n}_E \cdot w(\vec{s})|^2 &= \sum_{w \in \Omega} \vec{n}_E^T \left( w(\vec{s}) w(\vec{s})^T \right) \vec{n}_E \nonumber \\
+        &= \vec{n}_E^T \left( \sum_{w \in \Omega} w(\vec{s}) w(\vec{s})^T \right) \vec{n}_E.
+    \end{align}
+    Wir definieren die Matrix $$M := \sum_{w \in \Omega} w(\vec{s}) w(\vec{s})^T \in \mathbb{R}^{3 \times 3}.$$ Diese Matrix ist symmetrisch ($M=M^T$) und kommutiert mit jeder Drehung $R \in \Omega$:
+    \begin{align}
+        R M R^T &= \sum_{w \in \Omega} R w(\vec{s}) w(\vec{s})^T R^T = \sum_{w \in \Omega} (R w(\vec{s})) (R w(\vec{s}))^T. \nonumber
+    \end{align}
+    Da die Multiplikation mit $R$ von links die Gruppenelemente lediglich permutiert, gilt $$\sum_{w \in \Omega} (R w(\vec{s})) (R w(\vec{s}))^T = M.$$ Wir wir bereits in Abschnitt \ref{sec:orthogonalrotation} gesehen haben, sind Drehungen orthogonal sind und es folgt $$RM = MR.$$
+
+    Gemäss dem Spektralsatz (siehe Anhang \ref{sec:spektralsatzlinearealgebra}) besitzt die symmetrische Matrix $M$ einen reellen Eigenwert $\lambda$ mit zugehörigem Eigenraum $V_\lambda \neq \{0\}$. Für einen Vektor $\vec{v} \in V_\lambda$ gilt aufgrund der Kommutativität:
+    \begin{align}
+        M(R\vec{v}) = R(M\vec{v}) = R(\lambda \vec{v}) = \lambda (R\vec{v}). \nonumber
+    \end{align}
+    Somit ist $R\vec{v} \in V_\lambda$, was bedeutet, dass $V_\lambda$ ein invarianter Unterraum unter der Wirkung von $\Omega$ ist. Da die Gruppen $T, H$ und $I$ nach Lemma \ref{lemma:irreduzibelsymmetriegruppen} irreduzibel auf dem $\mathbb{R}^3$ operieren, muss $V_\lambda = \mathbb{R}^3$ gelten. Daraus folgt, dass $M$ ein skalares Vielfaches der Einheitsmatrix ist: $$M = \lambda I_3.$$
+    
+    Eingesetzt in Gleichung \eqref{eq:summevectormatrixnormal_revised} ergibt sich:
+    \begin{align}
+        \sum_{w \in \Omega} |\vec{n}_E \cdot w(s)|^2 = \vec{n}_E^T (\lambda I_3) \vec{n}_E = \lambda (\vec{n}_E^T \vec{n}_E) = \lambda. \nonumber
+    \end{align}
+    Da $\lambda$ eine Konstante ist, ist die Summe der quadrierten Projektionslängen unabhängig von der Ebene $E$.
+\end{proof}
+
+
+

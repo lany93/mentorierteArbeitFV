@@ -1,0 +1,158 @@
+\section{Lösungen}
+
+\subsubsection*{Aufgabe \ref{ex:verificationeinstiegesbeispielEbene3}}
+
+\subsubsection*{Aufgabe \ref{ex:geradesprisma}}
+
+\subsubsection*{Aufgabe \ref{ex:polyederalltag}}
+\begin{itemize}
+    \item Bienenwaben: Wenn man sie als dreidimensionale Röhren betrachtet, sind sie hexagonale Prismen, die am Ende oft durch eine komplexe Polyeder-Form (eine Art schiefes Rhomben-Dodekaeder) abgeschlossen werden.
+    \item Verpackungen (Tetra Pak): Der Name sagt es schon – die ursprüngliche Form dieser Milchverpackungen war ein Tetraeder. Heute sind die meisten Kartons jedoch Quader.
+    \item Pyramiden von Gizeh: Das klassische Beispiel für ein Polyeder mit einer quadratischen Grundfläche und vier dreieckigen Seitenflächen.
+    \item Moderne Hochhäuser: Viele Wolkenkratzer sind im Grunde riesige Quader oder bestehen aus einer Kombination verschiedener Prismen.
+\end{itemize}
+
+An dieser Stelle ist anzumerken, dass wir bei den Beispielen aus Alltag, Natur und Architektur eine Idealisierung vornehmen. Während ein mathematisches Polyeder exakt ebene Flächen und unendlich scharfe Kanten voraussetzt, weisen reale Objekte stets kleine Abweichungen auf.an den Ecken.
+
+
+\subsubsection*{Aufgabe \ref{ex:polyederbeispiele}}
+\begin{itemize}
+    \item[a)] Der \textit{Adidas Fevernova} basiert zwar topologisch auf einem abgestumpften Ikosaeder (einem Polyeder), ist aber als Spielball aufgepumpt und somit gekrümmt. Nach der strengen mathematischen Definition (nur ebene Flächen) ist der physische Ball also kein Polyeder. 
+    \item[b)] Ein idealer mathematischer Würfel ist ein Polyeder, aber fast alle echten Spielwürfel haben abgerundete Ecken und Kanten, um besser zu rollen – damit sind sie streng genommen keine Polyeder mehr. Dementsprechend "Nein", aufgrund der abgerundeten Ecken. Falls es sich jeodch um einen Casino-Präzisionswürfel (scharfe Kanten) handelt, wäre die Antwort „Ja“. 
+\end{itemize}
+
+\subsubsection*{Aufgabe \ref{ex:verifizierungwuerfelprojektion}}
+\begin{itemize}
+    \item[a)]\begin{align}
+        \Pi_{E_2} &= I - \vec{n}_{E_2} \cdot \vec{n}_{E_2} ^T\nonumber \\
+        &=  \left(\begin{matrix}
+            1 & 0 & 0 \\
+            0 & 1 & 0 \\
+            0 & 0 & 1
+            \end{matrix}\right) - \frac{1}{2}\begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix} \begin{pmatrix} 1 & -1 & 0 \end{pmatrix}  \nonumber \\
+        &= \left(\begin{matrix}
+            1 & 0 & 0 \\
+            0 & 1 & 0 \\
+            0 & 0 & 1
+            \end{matrix}\right) - 
+            \frac{1}{2}\left(\begin{matrix}
+            1 & -1 & 0 \\
+            -1 & 1 & 0 \\
+            0 & 0 & 0
+            \end{matrix}\right) \nonumber \\
+        &= \left(\begin{matrix}
+            \frac{1}{2} & \frac{1}{2} & 0 \\[3pt]
+            \frac{1}{2} & \frac{1}{2} & 0 \\[3pt]
+            0 & 0 & 1
+            \end{matrix}\right) \nonumber
+\end{align}
+Daraus folgt
+\begin{align}
+    \Pi_{E_2}(\vec{v}_{CG}) = \left(\begin{matrix}
+            \frac{1}{2} & \frac{1}{2} & 0 \\[3pt]
+            \frac{1}{2} & \frac{1}{2} & 0 \\[3pt]
+            0 & 0 & 1
+            \end{matrix}\right) \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} =  \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} \nonumber
+\end{align}
+und 
+\begin{align}
+    \Pi_{E_2}(\vec{v}_{GH}) = \left(\begin{matrix}
+            \frac{1}{2} & \frac{1}{2} & 0 \\[3pt]
+            \frac{1}{2} & \frac{1}{2} & 0 \\[3pt]
+            0 & 0 & 1
+            \end{matrix}\right) \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} =  \begin{pmatrix} \frac{1}{2} \\[3pt] \frac{1}{2} \\[3pt] 0 \end{pmatrix} \quad . \nonumber
+\end{align}
+\item[b)]     \begin{align}
+        \Pi_{E_1}(\vec{v}_{CG}) &= \left(I - (\vec{n} \cdot \vec{n}^T)\right) \vec{v}_{CG} \nonumber \\
+        &= \left(\left(\begin{matrix}
+            1 & 0 & 0 \\
+            0 & 1 & 0 \\
+            0 & 0 & 1
+            \end{matrix}\right) - \frac{1}{3}\begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} \begin{pmatrix} 1 & 1 & 1 \end{pmatrix}\right) \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} \nonumber \\
+        &= \left(\begin{matrix}
+            \frac{2}{3} & -\frac{1}{3} & -\frac{1}{3} \\
+            -\frac{1}{3} & \frac{2}{3} & -\frac{1}{3} \\
+            -\frac{1}{3} & -\frac{1}{3} & \frac{2}{3}
+            \end{matrix}\right)\begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} \nonumber \\
+            &=\begin{pmatrix} -\frac{1}{3} \\ -\frac{1}{3} \\ \frac{2}{3} \end{pmatrix} \nonumber
+    \end{align}
+\end{itemize}
+
+
+\subsubsection*{Aufgabe \ref{ex:äquivalenzklassen_regulärer_hexaeder}}
+Sei $P \subset \mathbb{R}^3$ ein Würfel und $H$ die Menge der orientierungserhaltenden Kongruenzabbildungen. Wir betrachten die Kante $\overline{AB}$ in Abb.\ref{fig:einheitswürfel} und deren Bahn bzw. Äquivalenzklasse. Gemäss dem Orbit-Stabilizor Theorem gilt 
+\begin{align}
+    |\textnormal{Orbit}(k)| &= \frac{|\textnormal{Gruppe}|}{|\textnormal{Stabilisator(k)}|} = \frac{24}{2} = 12 \nonumber
+\end{align}
+für den Orbit einer Kante $k$. Das heisst im Orbit von Kante $\overline{AB}$ im Würfel liegen 12 Kanten. Anders formuliert könnten wir auch sagen, dass der Würfel genau einen Orbit bzw. Äquivalenzklasse unter $H$ hat.
+
+\subsubsection*{Aufgabe \ref{ex:äquivalenzklassen}}
+\subsubsection*{Aufgabe \ref{ex:notwendigkeitsymmetrie}}
+
+\subsubsection*{Aufgabe \ref{ex:alternativbeweislemma}}
+\begin{itemize}
+    \item[a)] Die Matrix $M$ muss die Gleichung 
+\begin{align} \label{eq:eigenvector}
+    M \vec{v} = \lambda \vec{v}
+\end{align}
+für alle $\vec{n} \in \mathbb{R}^3$ erfüllen. Das heisst auch für die Vektoren
+\begin{align}
+    \vec{e}_1 = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}, \quad \vec{e}_2 = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}, \quad \vec{e}_3 = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}. \nonumber
+\end{align}
+Setzen wir dies in Gleichung (\ref{eq:eigenvector}) ein, erhalten wir 
+\begin{align}
+    M \cdot \vec{e}_1 = \lambda \cdot \vec{e}_1 = \begin{pmatrix} \lambda \\ 0 \\ 0 \end{pmatrix}, M \cdot \vec{e}_2 = \lambda \cdot \vec{e}_2 = \begin{pmatrix} 0 \\ \lambda \\ 0 \end{pmatrix}, M \cdot \vec{e}_3 = \lambda \cdot \vec{e}_3 = \begin{pmatrix} 0 \\ 0 \\ \lambda \end{pmatrix}. \nonumber
+\end{align}
+Somit erhalten wir für die Matrix 
+\begin{align}
+    M  = \begin{pmatrix} \lambda & 0 & 0 \\ 0 & \lambda & 0 \\ 0 & 0 & \lambda \end{pmatrix} = \lambda I_3 . \nonumber
+\end{align}
+\item[b)] Ein Würfel hat insgesamt 12 Kanten. In dieser Ausrichtung können wir sie in drei Gruppen aufteilen:
+\begin{itemize}
+    \item 4 Kanten verlaufen parallel zur $x$-Achse.
+    \item 4 Kanten verlaufen parallel zur $y$-Achse.
+    \item 4 Kanten verlaufen parallel zur $z$-Achse.
+\end{itemize}
+Wir definieren dementsprechend
+\begin{align}
+    v_x = \begin{pmatrix} 1  \\ 0  \\ 0  \end{pmatrix} , v_y = \begin{pmatrix} 0 \\ 1  \\ 0 \end{pmatrix}, v_z = \begin{pmatrix} 0  \\ 0  \\ 1  \end{pmatrix} . \nonumber
+\end{align}
+Die Matrix $M$ ist die Summe über alle 12 Kanten. Da wir von jeder Sorte exakt 4 Stück haben, multiplizieren wir unsere Zwischenergebnisse jeweils mit 4 und addieren sie
+
+\begin{align}
+    M &= 4 \cdot (v_x v_x^T) + 4 \cdot (v_y v_y^T) + 4 \cdot (v_z v_z^T) \nonumber \\
+    &=\begin{pmatrix} 4a^2 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix} + \begin{pmatrix} 0 & 0 & 0 \\ 0 & 4a^2 & 0 \\ 0 & 0 & 0 \end{pmatrix} + \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 4a^2 \end{pmatrix} \nonumber \\
+    &= 4a^2\begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}.  \nonumber
+\end{align}
+Daraus folgt
+    \begin{align} 
+        \sum_{w \in \Omega} \|\Pi_{E}w(\vec{s})\|^2 = |\Omega|  \|\vec{s}\|^2 - \vec{n}_E^TM\vec{n}_E
+        = 12\cdot 1- 4 = 8 \nonumber.
+    \end{align}
+
+\end{itemize}
+
+
+\subsubsection*{Aufgabe \ref{ex:notwendigkeitorthogonaleprojektionen}}
+\subsubsection*{Aufgabe \ref{ex:umkehrung_satz}}
+
+\subsubsection*{Aufgabe \ref{ex:summe_einheitswurzel}}
+Wir definieren $r:=e^{i4\pi/n} \in \mathbb{C}$. Falls $r \neq 1$ gilt, erhalten wir
+\begin{align}
+    \sum_{k=0}^{n-1}e^{i4k\pi/n} &= \sum_{k=0}^{n-1}r^k = \frac{1-r^n}{1-r} =  \frac{1-e^{i4\pi}}{1-r} = 0 \nonumber \quad .  
+\end{align}
+
+Es bleibt also herauszufinden, wann
+\begin{align} \label{eq:n_kleiner_als_3}
+     &r=e^{i4\pi/n}\overset{!}{=} 1 \nonumber \\
+     &\implies \frac{4\pi}{n} \overset{!}{=}  j2\pi \quad ,\textnormal{für} \ j \in \mathbb{N}  \quad .
+\end{align}
+Die Gleichung (\ref{eq:n_kleiner_als_3}) kann nur für $n=1$ oder $n=2$ erfüllt werden, womit die Aussage bewiesen wurde. 
+
+Alternativ: Es ist auch möglich sich die Einheitswurzeln in der komplexen Ebene einzeichnet und diese zu einem regelmässigen Polygon mit $n$-Ecken verbindet. Wenn wir uns die Eckpunkte als Punktmasse vorstellen und den Schwerpunkt dieses Polygons bestimmen, so merken wir, dass der Schwerpunkt im Ursprung liegt. Bei $n < 3$ entsteht kein Polygon. \qed
+
+\subsubsection*{Aufgabe \ref{ex:summ_einheitswurzel_smaller_than_3}}
+\begin{itemize}
+    \item[a)] $\sum_{k=0}^{0}e^{i4k\pi}=e^0=1$
+    \item[b)] $\sum_{k=0}^{1}e^{i4k\pi/2} = e^0 + e^{i2\pi} = 2$
+\end{itemize}

@@ -1,0 +1,25 @@
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+\subsection{Spektralsatz der Linearen Algebra} \label{sec:spektralsatzlinearealgebra}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{3}}
+Da der Spektralsatz eine zentrale Aussage in der Linearen Algebra ist, verweisen wir für den Beweis auf die zahlreiche Literatur, wie zum Beispiel \cite[Kap.~6.7]{fischer_lineare_algebra_20}. 
+\begin{lemma}
+Jede reelle, symmetrische $n \times n$-Matrix $A$ ist orthogonal diagonalisierbar.
+\end{lemma}
+Das bedeutet 
+\begin{itemize}
+    \item Alle Eigenwerte von $A$ sind reell.
+    \item Es existiert eine Orthonormalbasis des $\mathbb{R}^n$, die ausschließlich aus Eigenvektoren von $A$ besteht.
+    \item Die Matrix lässt sich zerlegen in $A = Q D Q^T$, wobei $D$ eine Diagonalmatrix der Eigenwerte und $Q$ eine orthogonale Matrix der Eigenvektoren ist.
+\end{itemize}
+
+In unserem Fall, haben wir die Matrix 
+\begin{align}
+    M := \sum_{w  \in \Omega} w(\vec{s}) w(\vec{s})^T \in \mathbb{R}^{3 \times 3}, \nonumber 
+\end{align}
+welche symmetrisch ist, da
+\begin{align}
+    M :=& \sum_{w  \in \Omega} w(\vec{s}) w(\vec{s})^T \nonumber \\
+    =& \sum_{w  \in \Omega} (w(\vec{s})^T)^T w(\vec{s})^T \nonumber \\
+    =& \sum_{w  \in \Omega} (w(\vec{s}) w(\vec{s})^T )^T = M^T \nonumber
+\end{align}

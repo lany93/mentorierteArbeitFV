@@ -1,0 +1,116 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Change the figure naming convention
+\addto\captionsenglish{\renewcommand{\figurename}{Abb.}}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Comments
+\usepackage{verbatim}
+
+% Useful packages
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{tikz} % Positioning images
+
+% Spacing
+\frenchspacing
+
+% Subfigures
+\usepackage{subcaption}
+
+% equation numbering includes section
+\numberwithin{equation}{section} 
+
+% Define macros
+\newcommand{\authorname}{Yan-Xing Lan}
+\newcommand{\subject}{Symmetrien und Projektionen – Invarianzphänomene bei Polyedern und Polygonen}
+
+% Define definition 
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+%\newtcbtheorem
+%  []% init options
+%  {definition}% name
+%  {Definition}% title
+%  {%
+%    colback=green!5,
+%    colframe=green!35!black,
+%    fonttitle=\bfseries,
+%  }% options
+%  {def}% prefix
+
+% Define examples
+\theoremstyle{definition}
+\newtheorem{example}{Beispiel}
+
+% Define task
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {}{}%
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newtheorem{exercise}{Aufgabe}
+
+% Define theorem, lemma, proposition
+\theoremstyle{plain}
+\newtheorem{theorem}{Satz}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+
+
+
+% Remove indent on whole document
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+% Sicherstellen, dass man nicht auf den Seitenrand schreibt
+\emergencystretch 3em
+
+% -------------------------
+% COVER PAGE
+% -------------------------
+\include{cover}
+
+% -------------------------
+% TITLE PAGE
+% -------------------------
+\title{\subject}
+\author{\authorname}
+\date{\today}
+% Anpassung Inhaltverzeichnis Bezeichnung
+\renewcommand*\contentsname{Inhaltverzeichnis}
+\setcounter{tocdepth}{2}
+\maketitle
+
+% -------------------------
+% Content
+% -------------------------
+
+% Table of content
+\newpage
+\tableofcontents
+
+% Chapters
+\include{chapters/00_einleitung}
+\include{chapters/02_main_theorem}
+%\include{chapters/03_didaktik}
+\include{chapters/98_loesungen}
+\include{chapters/99_anhang}
+\include{chapters/100_reflexion}
+% Bibliography
+\bibliographystyle{alpha}
+\bibliography{sample}
+
+\end{document}

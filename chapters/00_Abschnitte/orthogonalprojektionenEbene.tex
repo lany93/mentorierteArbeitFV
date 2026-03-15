@@ -1,0 +1,46 @@
+
+\subsection{Orthogonalprojektion auf eine Ebene im \texorpdfstring{$\mathbb{R}^3$}{R³}}
+
+In diesem Text arbeiten wir primär mit Projektionen im dreidimensionalen euklidischen Raum.
+
+\begin{definition} \label{def:orthogonalprojektion}
+Sei $E \subset \mathbb{R}^3$ eine Ebene durch den Ursprung mit dem Einheitsnormalenvektor $\vec{n}$. Die Orthogonalprojektion $\Pi_E: \mathbb{R}^3 \rightarrow E$ ist eine lineare Abbildung, die jedem Vektor $\vec{v} \in \mathbb{R}^3$ seinen Bildpunkt in $E$ so zuordnet, dass der Differenzvektor $\vec{v} - \Pi_E(\vec{v})$ parallel zu $\vec{n}$ steht.
+\end{definition}
+
+Für die Beweise in Kapitel \ref{sec:orthogonalprojektionen} werden wir explizite Orthogonalprojektionen berechnen. Zur Vorbereitung leiten wir hier die allgemeine Abbildungsvorschrift her. Jeder Vektor $\vec{v}$ lässt sich eindeutig in zwei Komponenten zerlegen:
+\begin{align} \label{eq:vektor_parallel_senkrecht}
+    \vec{v} = \vec{v}_{\parallel} + \vec{v}_{\perp},
+\end{align}
+wobei gilt:
+\begin{itemize}
+    \item $\vec{v}_{\parallel}$ liegt in der Ebene $E$ (die projizierte Komponente),
+    \item $\vec{v}_{\perp}$ steht senkrecht auf der Ebene $E$ und ist somit parallel zum Einheitsnormalenvektor $\vec{n}$.
+\end{itemize}
+
+Da $\vec{v}_{\perp}$ parallel zu $\vec{n}$ ist, existiert ein Skalar $\alpha \in \mathbb{R}$ mit $\vec{v}_{\perp} = \alpha \vec{n}$. Um $\alpha$ zu bestimmen, bilden wir das Skalarprodukt mit $\vec{n}$:
+\begin{align} \label{eq:skalar_senkrecht}
+    \vec{n} \cdot \vec{v} &= \vec{n} \cdot (\vec{v}_{\parallel} + \vec{v}_{\perp}) \nonumber \\
+    &= \vec{n} \cdot \vec{v}_{\parallel} + \vec{n} \cdot (\alpha \vec{n}) \nonumber \\
+    &= 0 + \alpha (\vec{n} \cdot \vec{n}) = \alpha,
+\end{align}
+wobei wir $\vec{n} \cdot \vec{v}_{\parallel} = 0$ (da $\vec{v}_{\parallel} \in E$) und $\vec{n} \cdot \vec{n} = 1$ (da $\|\vec{n}\|=1$) genutzt haben. Einsetzen in \eqref{eq:vektor_parallel_senkrecht} liefert:
+
+\begin{align} \label{eq:projectionwithvectorandnormal}
+    \Pi_{E}(\vec{v}) &= \vec{v}_{\parallel} = \vec{v} - \vec{v}_{\perp} \nonumber \\
+    &= \vec{v} - \alpha \vec{n} \nonumber \\
+    &= \vec{v} - (\vec{n} \cdot \vec{v}) \vec{n}.
+\end{align}
+
+
+
+In Matrixschreibweise lässt sich das Skalarprodukt $(\vec{n} \cdot \vec{v})\vec{n}$ als dyadisches Produkt $\vec{n}\vec{n}^T \vec{v}$ ausdrücken. Damit erhalten wir die Projektionsmatrix:
+
+\begin{align} \label{eq:ortho_proj_matrix_notation}
+    \Pi_{E}(\vec{v}) &= \vec{v} - (\vec{n}\vec{n}^T) \vec{v} \nonumber \\
+    &= (I - \vec{n}\vec{n}^T) \vec{v}.
+\end{align}
+
+\subsubsection{Aufgaben}
+\begin{exercise} \label{ex:verifizierungwuerfelprojektion}
+Verifizieren Sie die Resultate für die Ebenen $E_1$ und $E_2$ aus Beispiel \ref{ex:wuerfelprojektionen} mithilfe der Matrixdarstellung aus Gleichung \eqref{eq:ortho_proj_matrix_notation}.
+\end{exercise}
