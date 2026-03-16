@@ -55,7 +55,7 @@ Das reguläre Tetraeder hat genau 24 Decktransformationen. Diese kann man auf me
 Die 12 Decktransformationen des Tetraeders, die eine Spiegelung enthalten, lassen sich wie folgt klassifizieren:
 
 \begin{itemize}
-    \item \textbf{6 Ebenenspiegelungen}: Die Spiegelebenen verlaufen jeweils durch eine Kante und den Mittelpunkt der gegenüberliegenden Kante. Sie vertauschen genau zwei Eckpunkte, siehe Abbildung \ref{fig:tetraedespiegelachse}.
+    \item \textbf{6 Ebenenspiegelungen}: Die Spiegelebenen verlaufen jeweils durch eine Kante und den Mittelpunkt der gegenüberliegenden Kante. Sie vertauschen genau zwei Eckpunkte (siehe Abbildung \ref{fig:tetraedespiegelachse}).
     \item \textbf{6 Drehspiegelungen}: Diese bestehen aus einer Drehung um $90^\circ$ oder $270^\circ$ um eine Kantenmittelpunkt-Achse, gefolgt von einer Spiegelung an der Ebene senkrecht zu dieser Achse.
 \end{itemize}
 
@@ -69,7 +69,7 @@ Zusammen mit den 12 Drehungen bilden diese 24 Elemente die volle Symmetriegruppe
 \end{example}
 
 
-Die Decktransformationen des Tetraeders können wir in zwei Gruppen unterteilen: die orientierungserhaltenden und die orientierungsumkehrenden Abbildungen. Wir können uns einen Pfeil auf einer Seite des Tetraeders vorstellen, der im Uhrzeigersinn verläuft. Bei orientierungserhaltenden Decktransformationen bleibt dieser Pfeil im Uhrzeigersinn. Bei orientierungsumkehrenden Abbildungen wird im Bild der Abbildung der Pfeil im Gegenuhrzeigersinn verlaufen. Mathematisch lässt sich dies wie folgt definieren: 
+Die Decktransformationen des Tetraeders können wir in zwei Gruppen unterteilen: die orientierungserhaltenden und die orientierungsumkehrenden Abbildungen. Wir können uns einen Pfeil auf einer Seite des Tetraeders vorstellen, der im Uhrzeigersinn verläuft. Bei orientierungserhaltenden Decktransformationen bleibt dieser Pfeil im Uhrzeigersinn. Bei orientierungsumkehrenden Abbildungen wird der Pfeil im Gegenuhrzeigersinn verlaufen. Mathematisch lässt sich dies wie folgt definieren: 
 \begin{definition}
     Eine Decktransformation $w \in S_{\mathbb{F}}$ heisst \textbf{orientierungserhaltend}, falls für ihre darstellende Matrix $R$ gilt:
     \begin{align}
@@ -79,7 +79,7 @@ Die Decktransformationen des Tetraeders können wir in zwei Gruppen unterteilen:
 \end{definition}
  Anschaulich bedeutet dies, dass die Figur allein durch physische Bewegungen im Raum (Drehungen) mit sich selbst zur Deckung gebracht werden kann, ohne sie dabei durch einen Spiegel zu betrachten oder "umzustülpen". Diese Eigenschaft können wir uns auch kombinatorisch vorstellen. Angenommen wir kehren zurück zu unserem Beispiel des Tetraeders. So sind Decktransformationen nichts anderes als Permutationen der Ecken. Bei Permutationen unterscheiden wir zwischen \textbf{geraden} (orientierungserhaltenden) und \textbf{ungeraden} (orientierungsumkehrenden) Permutationen. Gerade Permutationen lassen sich dabei durch eine gerade Anzahl an Vertauschungen zweier Ecken erreichen und ungerade Permutationen durch eine ungerade Anzahl an Vertauschungen. Mehr zu den Permutationen finden Sie in \cite{hungerbuehler_kombinatorik1}. \newline
 
-In der Folge beschränken wir uns auf die orientierugnserhaltenden Decktransformationen und schreiben
+In der Folge beschränken wir uns auf die orientierungserhaltenden Decktransformationen und schreiben
 \begin{itemize}
     \item $T$ für die Symmetriegruppe vom Tetraeder,
     \item $H$ für die Symmetriegruppe vom Hexaeder und 
@@ -88,7 +88,7 @@ In der Folge beschränken wir uns auf die orientierugnserhaltenden Decktransform
 
 \subsubsection{Aufgaben}
 \begin{exercise} \label{ex:rotationisometrie}
-    Zeigen Sie, dass die Rotation, um die $x$-Achse, eine Isometrie ist. 
+    Zeigen Sie, dass die Rotation um die $x$-Achse eine Isometrie ist. 
 \end{exercise}
 
 \begin{exercise} \label{ex:hexaederikosaeder}
@@ -98,14 +98,14 @@ In der Folge beschränken wir uns auf die orientierugnserhaltenden Decktransform
         \item[b)] des regulären Ikosaeders.
         \item[c)] des regulären Oktaeders.
         \item[d)] des regulären Dodekaeders.
-    \end{itemize} Zur Visulisierung können Sie folgendes Tool auf GeoGebra für den Hexaeder \href{https://www.geogebra.org/m/S97XG6v7}{Interaktive Würfel-Animation} \cite{geogebra_cube_symmetry} und den Ikosaeder \href{https://www.geogebra.org/m/PA7zzxHa}{Interaktive Ikosaeder-Animation} \cite{geogebra_icosahedron}.
+    \end{itemize} Zur Visualisierung können Sie folgendes Tool auf GeoGebra für den Hexaeder \href{https://www.geogebra.org/m/S97XG6v7}{Interaktive Würfel-Animation} \cite{geogebra_cube_symmetry} und den Ikosaeder \href{https://www.geogebra.org/m/PA7zzxHa}{Interaktive Ikosaeder-Animation} \cite{geogebra_icosahedron} nutzen.
 \end{exercise}
 
 \subsubsection{Irreduzibilität}
 In diesem Abschnitt untersuchen wir eine grundlegende Eigenschaft der orientierungserhaltenden Symmetriegruppen des regulären Tetraeders, Hexaeders und Ikosaeders. Wir bezeichnen mit $T$ die Gruppe der orientierungserhaltenden Symmetrien (Drehgruppe) des Tetraeders sowie analog mit $H$ und $I$ jene des Hexaeders respektive des Ikosaeders.
 
 \begin{definition}
-Sei $V$ ein Vektorraum (in unserem Fall der $\mathbb{R}^3$) und $G$ eine Gruppe von linearen Abbildungen, die auf $V$ operiert. Ein Unterraum $U \subseteq V$ heißt $G$-invariant (oder stabil unter $G$), wenn für jedes Element $g \in G$ und jeden Vektor $u \in U$ gilt, dass das Bild $g(u)$ wieder in $U$ liegt. Die Operation der Gruppe $G$ auf dem Raum $V$ heißt irreduzibel, wenn die einzigen $G$-invarianten Unterräume der triviale Nullraum $\{0\}$ und der gesamte Raum $V$ selbst sind. Gibt es hingegen einen echten invarianten Unterraum (also $U \neq \{0\}$ und $U \neq V$), so nennt man die Gruppe reduzibel.
+Sei $V$ ein Vektorraum (in unserem Fall der $\mathbb{R}^3$) und $G$ eine Gruppe von linearen Abbildungen, die auf $V$ operiert. Ein Unterraum $U \subseteq V$ heisst $G$-invariant (oder stabil unter $G$), wenn für jedes Element $g \in G$ und jeden Vektor $u \in U$ gilt, dass das Bild $g(u)$ wieder in $U$ liegt. Die Operation der Gruppe $G$ auf dem Raum $V$ heisst irreduzibel, wenn die einzigen $G$-invarianten Unterräume der triviale Nullraum $\{0\}$ und der gesamte Raum $V$ selbst sind. Gibt es hingegen einen echten invarianten Unterraum (also $U \neq \{0\}$ und $U \neq V$), so nennt man die Gruppe reduzibel.
 \end{definition}
 
 
@@ -128,7 +128,7 @@ Sei $V$ ein Vektorraum (in unserem Fall der $\mathbb{R}^3$) und $G$ eine Gruppe 
         \item $R\vec{v}_g = -\vec{v}_g$ (der Vektor wird um $180^\circ$ gedreht).
     \end{itemize}
 
-    Nun enthalten alle betrachteten Gruppen $\{T, H, I\}$ jedoch Drehungen um $120^\circ$ (entsprechend der Symmetrie der Flächen oder Ecken). Eine $120^\circ$-Drehung kann einen Vektor nur dann auf $\vec{v}_g$ oder $-\vec{v}_g$ abbilden, wenn $\vec{v}_g$ selbst auf der Drehachse liegt. Damit die Gerade $g$ für die \textit{gesamte} Gruppe invariant ist, müsste sie also die gemeinsame Drehachse \textit{aller} $120^\circ$-Drehungen der Gruppe sein.
+    Nun enthalten alle betrachteten Gruppen $\{T, H, I\}$ jedoch Drehungen um $120^\circ$ (entsprechend der Symmetrie der Flächen oder Ecken). Eine $120^\circ$-Drehung kann einen Vektor nur dann auf $\vec{v}_g$ oder $-\vec{v}_g$ abbilden, wenn $\vec{v}_g$ selbst auf der Drehachse liegt. Damit die Gerade $g$ für die gesamte Gruppe invariant ist, müsste sie also die gemeinsame Drehachse aller $120^\circ$-Drehungen der Gruppe sein.
 
     Wir wissen jedoch:
     \begin{itemize}
@@ -154,12 +154,12 @@ In diesem Abschnitt zeigen wir, dass Matrizen, die eine Drehung im euklidischen 
 \end{lemma}
 
 \begin{proof}
-    Seien $\vec{v}, \vec{w} \in \mathbb{R}^n$. Eine Drehung ist eine Isometrie; per Definition bleiben unter dieser Transformation zwei Eigenschaften invariant:
+    Seien $\vec{v}, \vec{w} \in \mathbb{R}^n$. Eine Drehung ist eine Isometrie. Per Definition bleiben unter dieser Transformation zwei Eigenschaften invariant:
 \begin{itemize}
     \item Die Längen der Vektoren verändern sich nicht ($\|\vec{v}\| = \|R\vec{v}\|$).
     \item Der Winkel zwischen zwei Vektoren bleibt erhalten.
 \end{itemize}
-Da eine Drehung somit das Skalarprodukt (und damit Längen und Winkel) erhält, muss für beliebige Vektoren $\vec{v}$ und $\vec{w}$ gelten
+Da eine Drehung das Skalarprodukt (und damit Längen und Winkel) erhält, muss für beliebige Vektoren $\vec{v}$ und $\vec{w}$ gelten
 \begin{align*}
     (R\vec{v}) \cdot (R\vec{w}) = \vec{v} \cdot \vec{w}.
 \end{align*}

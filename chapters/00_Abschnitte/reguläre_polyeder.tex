@@ -2,7 +2,7 @@
 In dieser Arbeit werden wir uns intensiv mit den Symmetrieeigenschaften von drei spezifischen regulären Polyedern auseinandersetzen: dem regulären \textit{Tetraeder}, dem regulären \textit{Hexaeder} und dem regulären \textit{Ikosaeder}. Bevor wir jedoch im Detail auf diese Körper eingehen, geben wir eine kurze Einführung in die Geschichte der \textit{regulären Polyeder}. Dieser Abschnitt basiert auf den Ausführungen von P.R. Cromwell \cite[Kap.~2]{cromwell_polyhedra_1997} und H.S.M. Coxeter \cite[Kap.~1.2-1.3,~2.1]{coxeter_regular_polytopes_1973}.
 
 \subsubsection{Historische Entwicklung}
-Die Beschäftigung mit regulären Polyedern gehört zu den ältesten Themen der Geometrie. Ein Polyeder (griechisch für „Vielflächner“) ist ein dreidimensionaler Körper, der ausschliesslich von ebenen Flächen begrenzt wird. Unter diesen nehmen die regulären Polyeder eine Sonderstellung ein, da sie ein Höchstmass an Gleichmässigkeit und Symmetrie aufweisen. Bereits in der griechischen Antike faszinierten diese Formen Mathematiker und Philosophen gleichermassen. Peter Cromwell beschreibt in seinem Werk \textit{Polyhedra}, wie diese Körper im 13. Buch von Euklids „Elementen“ erstmals systematisch erfasst wurden. Euklid lieferte dort den entscheidenden Beweis, dass es im dreidimensionalen Raum genau fünf dieser perfekten Formen gibt – die sogenannten Platonischen Körper. Während sie in der Antike oft als Symbole für die Naturelemente dienten, siehe Abbildung \ref{fig:platonicsolids}, betrachten wir sie heute primär als Untersuchungsobjekte der Gruppentheorie und Symmetrielehre. H.S.M. Coxeter, einer der bedeutendsten Geometer des 20. Jahrhunderts, legte mit seinem Buch \textit{Regular Polytopes} das Fundament dafür, diese Körper nicht nur als starre Objekte, sondern als Resultat von Spiegelungen und Drehungen zu verstehen.
+Die Beschäftigung mit regulären Polyedern gehört zu den ältesten Themen der Geometrie. Ein Polyeder (griechisch für „Vielflächner“) ist ein dreidimensionaler Körper, der ausschliesslich von ebenen Flächen begrenzt wird. Unter diesen nehmen die regulären Polyeder eine Sonderstellung ein, da sie ein Höchstmass an Gleichmässigkeit und Symmetrie aufweisen. Bereits in der griechischen Antike faszinierten diese Formen Mathematiker und Philosophen gleichermassen. Peter Cromwell beschreibt in seinem Werk \textit{Polyhedra}, wie diese Körper im 13. Buch von Euklids „Elementen“ erstmals systematisch erfasst wurden. Euklid lieferte dort den entscheidenden Beweis, dass es im dreidimensionalen Raum genau fünf dieser perfekten Formen gibt, nämlich die sogenannten Platonischen Körper. Während sie in der Antike oft als Symbole für die Naturelemente dienten (siehe Abbildung \ref{fig:platonicsolids}), betrachten wir sie heute primär als Untersuchungsobjekte der Gruppentheorie und Symmetrielehre. H.S.M. Coxeter, einer der bedeutendsten Geometer des 20. Jahrhunderts, legte mit seinem Buch \textit{Regular Polytopes} das Fundament dafür, diese Körper nicht nur als starre Objekte, sondern als Resultat von Spiegelungen und Drehungen zu verstehen.
 
 \begin{figure}[htp]
 \centering
@@ -15,11 +15,11 @@ Die Beschäftigung mit regulären Polyedern gehört zu den ältesten Themen der 
 Bevor wir die Besonderheiten der Symmetrie untersuchen, müssen wir klären, was genau ein Polyeder im mathematischen Sinne definiert. Ein Polyeder (von griechisch \textit{poly} für „viel“ und \textit{hedra} für „Sitz“ oder „Fläche“) ist ein dreidimensionaler Körper, dessen Oberfläche aus ebenen Polygonen (Vielecken) besteht. Nach Cromwell lässt sich ein Polyeder als eine Ansammlung von Flächen beschreiben, die so miteinander verbunden sind, dass sie einen abgeschlossenen Raumteil umschliessen. Dabei müssen zwei wesentliche Bedingungen erfüllt sein:
 
 \begin{itemize}
-    \item Jede \textbf{Kante} gehört zu genau zwei Flächen.
+    \item Jede Kante gehört zu genau zwei Flächen.
     \item Der Körper ist zusammenhängend: Man kann von jeder Fläche zu jeder anderen gelangen, indem man über die Kanten wandert.
 \end{itemize}
 
-Die Schnittpunkte, an denen mindestens drei Flächen (und damit mindestens drei Kanten) aufeinandertreffen, bezeichnen wir als \textbf{Ecken}. Ein Tetraeder besitzt beispielsweise 6 Kanten und 4 Ecken (siehe Abbildung \ref{fig:tetraeder}).
+Die Schnittpunkte an denen mindestens drei Flächen und damit mindestens drei Kanten aufeinandertreffen, bezeichnen wir als \textbf{Ecken}. Ein Tetraeder besitzt beispielsweise 6 Kanten und 4 Ecken (siehe Abbildung \ref{fig:tetraeder}).
 
 \begin{figure}[htp]
 \centering
@@ -30,14 +30,14 @@ Die Schnittpunkte, an denen mindestens drei Flächen (und damit mindestens drei 
 
 
 
-Alltagsbeispiele für Polyeder sind etwa Pakete oder würfelförmige Regale. Sobald jedoch gekrümmte Begrenzungsflächen vorhanden sind – wie bei einer Kugel oder einer Getränkedose – handelt es sich nicht mehr um ein Polyeder (siehe Abbildung \ref{fig:auswahl_polyeder}).
+Alltagsbeispiele für Polyeder sind etwa Pakete oder würfelförmige Regale. Sobald jedoch gekrümmte Begrenzungsflächen vorhanden sind, wie bei einer Kugel oder einer Getränkedose, handelt es sich nicht mehr um ein Polyeder (siehe Abbildung \ref{fig:auswahl_polyeder}).
 
 \begin{figure}[htbp]
      \centering
      \begin{subfigure}[b]{0.45\textwidth}
          \centering
          \includegraphics[width=\textwidth]{images/polyeder/kuppelhaus_düsseldorf.jpg}
-         \caption{Kuppelhaus des botanischen Gartens in Düsseldorf.}
+         \caption{Botanischer Garten in Düsseldorf.}
          \label{fig:kuppelhaus_düsseldorf}
      \end{subfigure}
      \hfill
@@ -60,19 +60,19 @@ Damit ein Polyeder als \textit{regulär} eingestuft wird, müssen laut Coxeter z
 \begin{comment}
 Diese Struktur wird mathematisch durch das Schläfli-Symbol $\{p, q\}$ zusammengefasst. Dabei steht $p$ für die Anzahl der Ecken einer einzelnen Fläche und $q$ für die Anzahl der Flächen, die an einer Ecke zusammentreffen. Ein Würfel besteht aus Quadraten ($p=4$), von denen drei an jeder Ecke zusammenkommen ($q=3$), was zum Symbol $\{4, 3\}$ führt. 
 \end{comment}
-Das Quaderförmige Paket in Abbildung \ref{fig:Paket} erfüllt die Flächenregularität zum Beispiel nicht, da die Seitenflächen nicht kongruente, reguläre Vielecke sind. Ein Polyeder, welches die Eckenregularität verletzt, ist zum Beispiel ein gestrecktes Oktaeder, siehe Abbildung \ref{fig:oktaeder}.
-An den Ecken $E$ und $A$ treffen zwar jeweils vier Dreiecke aufeinander, jedoch is der Winkel zwischen den Kanten an der Ecke $E$ viel spitzer als an der Ecke $A$. Somit ist die Anordnung nicht diesselbe.
+Das quaderförmige Paket in Abbildung \ref{fig:Paket} erfüllt die Flächenregularität zum Beispiel nicht, da die Seitenflächen nicht kongruente, reguläre Vielecke sind. Ein Polyeder, welches die Eckenregularität verletzt, ist zum Beispiel ein gestrecktes Oktaeder (siehe Abbildung \ref{fig:oktaeder}).
+An den Ecken $E$ und $B$ treffen zwar jeweils vier Dreiecke aufeinander, jedoch ist der Winkel zwischen den Kanten an der Ecke $E$ viel spitzer als an der Ecke $B$. Somit ist die Anordnung nicht diesselbe.
 \begin{figure}[htp]
 \centering
 \includegraphics[width=0.4\textwidth]{images/polyeder/oktaeder.png}
-\caption{Gestrecktes Okateder mit $a \neq s$.}
+\caption{Gestrecktes Oktaeder mit $a<s$.}
 \label{fig:oktaeder}
 \end{figure}
 
 Von den regulären Polyedern, auch als Platonische Körper bekannt, existieren exakt fünf:
 \begin{itemize}
     \item \textbf{Reguläres Tetraeder}: (griech. \textit{tetra} = vier) Begrenzt von vier regulären Dreiecken.
-    \item \textbf{Reguläres Hexaeder}: (griech. \textit{hex} = sechs) Der Würfel, begrenzt von sechs Quadraten.
+    \item \textbf{Reguläres Hexaeder}: (griech. \textit{hex} = sechs) Der Würfel wird begrenzt von sechs Quadraten.
     \item \textbf{Reguläres Oktaeder}: (griech. \textit{oktō} = acht) Begrenzt von acht regulären Dreiecken.
     \item \textbf{Reguläres Dodekaeder}: (griech. \textit{dōdeka} = zwölf) Begrenzt von zwölf regulären Fünfecken.
     \item \textbf{Reguläres Ikosaeder}: (griech. \textit{eíkosi} = zwanzig) Begrenzt von zwanzig regulären Dreiecken.
@@ -80,7 +80,7 @@ Von den regulären Polyedern, auch als Platonische Körper bekannt, existieren e
 
 
 
-Es existieren verschiedene Beweise dafür, dass es genau fünf reguläre Polyeder gibt. Ein geometrischer Beweis von Euklid basiert auf den Innenwinkeln der Flächen. Ein weiterer, algebraischer Beweis stammt von Leonhard Euler; dieser nutzt den Polyedersatz und benötigt keine Betrachtung der Winkel. Da diese Beweise für den weiteren Verlauf dieser Arbeit nicht unmittelbar relevant sind, verweisen wir auf die entsprechende Literatur \cite[Kap.~2]{coxeter_regular_polytopes_1973, cromwell_polyhedra_1997}. Im nächsten Abschnitt werden wir uns intensiv mit den Symmetriegruppen dieser Körper beschäftigen.
+Es existieren verschiedene Beweise dafür, dass es genau fünf reguläre Polyeder gibt. Ein geometrischer Beweis von Euklid basiert auf den Innenwinkeln der Flächen. Ein weiterer algebraischer Beweis stammt von Leonhard Euler. Dieser nutzt den Polyedersatz und benötigt keine Betrachtung der Winkel. Da diese Beweise für den weiteren Verlauf dieser Arbeit nicht unmittelbar relevant sind, verweisen wir auf die entsprechende Literatur \cite[Kap.~2]{coxeter_regular_polytopes_1973, cromwell_polyhedra_1997}. Im nächsten Abschnitt werden wir uns intensiv mit den Symmetriegruppen dieser Körper beschäftigen.
 
 
 \subsubsection{Aufgaben}
@@ -92,8 +92,8 @@ Es existieren verschiedene Beweise dafür, dass es genau fünf reguläre Polyede
 \begin{exercise} \label{ex:polyederbeispiele}
     Prüfen Sie anhand der Definition eines Polyeders, ob es sich bei den folgenden Objekten um ein solches handelt:
     \begin{itemize}
-        \item[a)] der \textit{Adidas Fevernova} (offizieller Fussball der WM 2002),
-        \item[b)] ein klassischer Spielwürfel.
+        \item[a)] Der \textit{Adidas Fevernova} (offizieller Fussball der WM 2002).
+        \item[b)] Ein klassischer Spielwürfel.
     \end{itemize}
-    Begründen Sie Ihre Antwort. Handelt es sich zudem um \textbf{reguläre} Polyeder?
+    Begründen Sie Ihre Antwort. Handelt es sich zudem um reguläre Polyeder?
 \end{exercise}

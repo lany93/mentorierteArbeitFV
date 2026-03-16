@@ -7,12 +7,12 @@ Die Ebene $E_3$ hat den Normalenvektor
 \end{align}
 Aufgrund der Symmetrie des regulären Hexaeders können wir bei dieser Projektion zwei verschiedene Gruppen von Kanten unterscheiden:
 \begin{itemize}
-    \item Acht Kanten liegen parallel zur Ebene $E_3$ (bzw. stehen orthogonal auf dem Normalenvektor $\vec{n}_{E_2}$), wie beispielsweise die Kante $\overline{CD}$.
-    \item Die restlichen vier Kanten sind parallel zum Normalenvektor $\vec{n}_{E_3}$ ein, wie beispielsweise die Kante $\overline{CG}$.
+    \item Acht Kanten liegen parallel zur Ebene $E_3$ (bzw. stehen orthogonal auf dem Normalenvektor $\vec{n}_{E_3}$), wie beispielsweise die Kante $\overline{CD}$.
+    \item Die restlichen vier Kanten sind parallel zum Normalenvektor $\vec{n}_{E_3}$, wie beispielsweise die Kante $\overline{CG}$.
 \end{itemize}
 Somit folgt
 \begin{align}
-    \sum_{k \in K_W} \|\Pi_{E_2}(\vec{v}_k)\| = 8 \cdot 1 + 4 \cdot  0= 8. \nonumber
+    \sum_{k \in K_W} \|\Pi_{E_3}(\vec{v}_k)\| = 8 \cdot 1 + 4 \cdot  0= 8. \nonumber
 \end{align}
 
 \subsubsection*{Aufgabe \ref{ex:geradesprisma}}
@@ -35,13 +35,13 @@ wobei $a$ die Kantenlänge der Grundfläche und $h$ die Höhe des regulären Pri
     \item Moderne Hochhäuser: Viele Wolkenkratzer sind im Grunde riesige Quader oder bestehen aus einer Kombination verschiedener Prismen.
 \end{itemize}
 
-An dieser Stelle ist anzumerken, dass wir bei den Beispielen aus Alltag, Natur und Architektur eine Idealisierung vornehmen. Während ein mathematisches Polyeder exakt ebene Flächen und unendlich scharfe Kanten voraussetzt, weisen reale Objekte stets kleine Abweichungen auf an den Ecken.
+An dieser Stelle ist anzumerken, dass wir bei den Beispielen aus Alltag, Natur und Architektur eine Idealisierung vornehmen. Während ein mathematisches Polyeder exakt ebene Flächen und unendlich scharfe Kanten voraussetzt, weisen reale Objekte stets kleine Abweichungen an den Ecken auf.
 
 
 \subsubsection*{Aufgabe \ref{ex:polyederbeispiele}}
 \begin{itemize}
     \item[a)] Der \textit{Adidas Fevernova} basiert zwar topologisch auf einem abgestumpften Ikosaeder (einem regulären Polyeder), ist aber als Spielball aufgepumpt und somit gekrümmt. Nach der strengen mathematischen Definition (nur ebene Flächen) ist der physische Ball also kein Polyeder. 
-    \item[b)] Ein idealer mathematischer Würfel ist ein regulärer Polyeder, aber fast alle echten Spielwürfel haben abgerundete Ecken und Kanten, um besser zu rollen – damit sind sie streng genommen keine Polyeder mehr. Dementsprechend "Nein", aufgrund der abgerundeten Ecken. Falls es sich jeodch um einen Casino-Präzisionswürfel (scharfe Kanten) handelt, wäre die Antwort „Ja“. 
+    \item[b)] Ein idealer mathematischer Würfel ist ein regulärer Polyeder, aber fast alle echten Spielwürfel haben abgerundete Ecken und Kanten, um besser zu rollen. Damit sind sie streng genommen keine Polyeder mehr. Dementsprechend "Nein", aufgrund der abgerundeten Ecken. Falls es sich jedoch um einen Casino-Präzisionswürfel (scharfe Kanten) handelt, wäre die Antwort „Ja“. 
 \end{itemize}
 
 
@@ -84,8 +84,8 @@ Somit folgt
     \label{fig:ikosaederdrehachsen}
 \end{figure}
 
-\item[c)] Die Symmetriegruppe des regulären Oktaeders ist identisch zur Symmetrieruppe des regulären Hexaeders. 
-\item[d)] Die Symmetriegruppe des regulären Dedokaeders ist identisch zur Symmetrieruppe des regulären Ikosaeders. 
+\item[c)] Die Symmetriegruppe des regulären Oktaeders ist identisch zur Symmetriegruppe des regulären Hexaeders. 
+\item[d)] Die Symmetriegruppe des regulären Dodekaeders ist identisch zur Symmetriegruppe des regulären Ikosaeders. 
 \end{itemize}
 
 
@@ -152,6 +152,27 @@ $$ \|\Pi_{E_2}(\vec{v}_{CG})\| = 1 $$
 respektive
 $$ \|\Pi_{E_2}(\vec{v}_{GH}))\| = \frac{1}{\sqrt{2}}.$$ 
 
+
+\subsubsection*{Aufgabe \ref{ex:äquivalenzklassen}}
+Wir haben eine Menge $M$ und eine Äquivalenzrelation $\sim$. Eine Äquivalenzklasse eines Elements $a$ ist definiert als $$[a] := \{x \in M \mid x \sim a\}$$
+
+Wir müssen nun zwei Dinge beweisen:
+\begin{enumerate}
+    \item Dass die Klassen zusammen die ganze Menge ergeben (Vereinigung).
+    \item Dass sie streng disjunkt sind (sich nicht überschneiden, außer sie sind exakt gleich).
+\end{enumerate}
+\vspace{0.4cm}
+Zu 1: Da die Äquivalenzrelation reflexiv ist, gilt $$ a \sim a$$
+für jedes $a \in M$. Da das für jedes Element gilt, ergibt die Vereinigung aller Äquivalenzklassen zwangsläufig die komplette Menge $M$.
+
+\vspace{0.4cm}
+Zu 2.: Nehmen wir an, die Klassen überschneiden sich teilweise. Es gibt also ein Element $c$, das in beiden Klassen liegt ($c \in [a]$ und $c \in [b]$).  Es gilt also
+$$ c \sim a \ \text{und} \ c \sim b.$$
+Da die Äquivalenzrelation symmetrisch und transitiv ist, folgt
+$$ a \sim b \implies [a] = [b].$$
+Zwei Klassen können sich nicht nur teilweise überschneiden. 
+\vspace{0.4cm}
+Somit folgt, dass die Menge $M$ die disjunkte Vereinigung ihrer Äquivalenzklassen bezüglich $\sim$ ist.
 
 \subsubsection*{Aufgabe \ref{ex:äquivalenzklassen_regulärer_hexaeder}}
 Sei $P \subset \mathbb{R}^3$ ein Würfel und $H$ die Menge der orientierungserhaltenden Kongruenzabbildungen. Wir betrachten die Kante $\overline{AB}$ in Abb.\ref{fig:einheitswürfel} und deren Bahn bzw. Äquivalenzklasse. Gemäss dem Orbit-Stabilizor Theorem gilt 
@@ -221,23 +242,23 @@ wird die Orthogonalprojektion verwendet.
 \subsubsection*{Aufgabe \ref{ex:umkehrung_satz}}
 Nein, siehe Beispiel \ref{example:geradesprisma} und \ref{example:pseudorhombenkuboktaeder}.
 
-\subsubsection*{Aufgabe \ref{ex:summe_einheitswurzel}}
-Wir definieren $r:=e^{i4\pi/n} \in \mathbb{C}$. Falls $r \neq 1$ gilt, erhalten wir
-\begin{align}
-    \sum_{k=0}^{n-1}e^{i4k\pi/n} &= \sum_{k=0}^{n-1}r^k = \frac{1-r^n}{1-r} =  \frac{1-e^{i4\pi}}{1-r} = 0 \nonumber \quad .  
-\end{align}
+% \subsubsection*{Aufgabe \ref{ex:summe_einheitswurzel}}
+% Wir definieren $r:=e^{i4\pi/n} \in \mathbb{C}$. Falls $r \neq 1$ gilt, erhalten wir
+% \begin{align}
+%     \sum_{k=0}^{n-1}e^{i4k\pi/n} &= \sum_{k=0}^{n-1}r^k = \frac{1-r^n}{1-r} =  \frac{1-e^{i4\pi}}{1-r} = 0 \nonumber \quad .  
+% \end{align}
 
-Es bleibt also herauszufinden, wann
-\begin{align} \label{eq:n_kleiner_als_3}
-     &r=e^{i4\pi/n}\overset{!}{=} 1 \nonumber \\
-     &\implies \frac{4\pi}{n} \overset{!}{=}  j2\pi \quad ,\textnormal{für} \ j \in \mathbb{N}  \quad .
-\end{align}
-Die Gleichung (\ref{eq:n_kleiner_als_3}) kann nur für $n=1$ oder $n=2$ erfüllt werden, womit die Aussage bewiesen wurde. 
+% Es bleibt also herauszufinden, wann
+% \begin{align} \label{eq:n_kleiner_als_3}
+%      &r=e^{i4\pi/n}\overset{!}{=} 1 \nonumber \\
+%      &\implies \frac{4\pi}{n} \overset{!}{=}  j2\pi \quad ,\textnormal{für} \ j \in \mathbb{N}  \quad .
+% \end{align}
+% Die Gleichung (\ref{eq:n_kleiner_als_3}) kann nur für $n=1$ oder $n=2$ erfüllt werden, womit die Aussage bewiesen wurde. 
 
-Alternativ: Es ist auch möglich sich die Einheitswurzeln in der komplexen Ebene einzeichnet und diese zu einem regelmässigen Polygon mit $n$-Ecken verbindet. Wenn wir uns die Eckpunkte als Punktmasse vorstellen und den Schwerpunkt dieses Polygons bestimmen, so merken wir, dass der Schwerpunkt im Ursprung liegt. Bei $n < 3$ entsteht kein Polygon. \qed
+% Alternativ: Es ist auch möglich sich die Einheitswurzeln in der komplexen Ebene einzeichnet und diese zu einem regelmässigen Polygon mit $n$-Ecken verbindet. Wenn wir uns die Eckpunkte als Punktmasse vorstellen und den Schwerpunkt dieses Polygons bestimmen, so merken wir, dass der Schwerpunkt im Ursprung liegt. Bei $n < 3$ entsteht kein Polygon. \qed
 
-\subsubsection*{Aufgabe \ref{ex:summ_einheitswurzel_smaller_than_3}}
-\begin{itemize}
-    \item[a)] $\sum_{k=0}^{0}e^{i4k\pi}=e^0=1$
-    \item[b)] $\sum_{k=0}^{1}e^{i4k\pi/2} = e^0 + e^{i2\pi} = 2$
-\end{itemize}
+% \subsubsection*{Aufgabe \ref{ex:summ_einheitswurzel_smaller_than_3}}
+% \begin{itemize}
+%     \item[a)] $\sum_{k=0}^{0}e^{i4k\pi}=e^0=1$
+%     \item[b)] $\sum_{k=0}^{1}e^{i4k\pi/2} = e^0 + e^{i2\pi} = 2$
+% \end{itemize}

@@ -1,5 +1,5 @@
  \subsection{Einführungsbeispiel}
-Das zentrale Thema dieses Abschnitts sind Orthogonalprojektionen regulärer Polyeder auf Ebenen. Als Einstieg betrachten wir die Projektion eines Würfels auf eine Ebene im Raum. Der Würfel – auch \textbf{reguläres Hexaeder} genannt, siehe Abb. \ref{fig:einheitswürfel} – besitzt zahlreiche interessante Merkmale. Dazu gehören insbesondere seine Symmetrieeigenschaften, welche in Abschnitt \ref{sec:symmetrieeigenschaftwürfel} detailliert analysiert werden. Im Rahmen dieses Einführungsbeispiels fokussieren wir uns jedoch primär auf eine spezifische Eigenschaft der Kantenlängen der Orthogonalprojektion.
+Das zentrale Thema dieses Abschnitts sind Orthogonalprojektionen regulärer Polyeder auf Ebenen. Als Einstieg betrachten wir die Projektion eines Würfels auf eine Ebene im Raum. Der Würfel, auch \textbf{reguläres Hexaeder} genannt, siehe Abb. \ref{fig:einheitswürfel}, besitzt zahlreiche interessante Merkmale. Dazu gehören insbesondere seine Symmetrieeigenschaften, welche in Abschnitt \ref{sec:symmetrieeigenschaftwürfel} detailliert analysiert werden. Im Rahmen dieses Einführungsbeispiels fokussieren wir uns jedoch primär auf eine spezifische Eigenschaft der Kantenlängen der Orthogonalprojektion.
 
 \begin{figure}[htp]
     \centering
@@ -8,7 +8,7 @@ Das zentrale Thema dieses Abschnitts sind Orthogonalprojektionen regulärer Poly
     \label{fig:einheitswürfel}
 \end{figure}
 
-Wir untersuchen, ob es eine invariante Eigenschaft in Bezug auf die projizierten Kantenlängen gibt. Eine Hypothese könnte lauten, dass die Summe der Längen aller projizierten Kanten eines Würfels bei einer Orthogonalprojektion unabhängig von der Lage der Projektionsebene ist. Um die Plausibilität dieser Hypothese zu prüfen, betrachten wir zunächst die Projektionen der Würfelkanten auf zwei verschiedene Ebenen. Sollte die Eigenschaft bereits für diese zwei Fälle nicht gelten, ließe sich die Hypothese direkt widerlegen. Das Nachvollziehen von Hypothesen an konkreten Instanzen ist zudem oftmals hilfreich, um ein besseres Verständnis aufzubauen, und möglicherweise eine besser Hypothese zu finden; dieser Untersuchung gehen wir in Beispiel \ref{ex:wuerfelprojektionen} nach.
+Wir untersuchen, ob es eine invariante Eigenschaft in Bezug auf die projizierten Kantenlängen gibt. Eine Hypothese könnte lauten, dass die Summe der Längen aller projizierten Kanten eines Würfels bei einer Orthogonalprojektion unabhängig von der Lage der Projektionsebene ist. Um die Plausibilität dieser Hypothese zu prüfen, betrachten wir zunächst die Projektionen der Würfelkanten auf zwei verschiedene Ebenen. Sollte die Eigenschaft bereits für diese zwei Fälle nicht gelten, liesse sich die Hypothese direkt widerlegen. Das Nachvollziehen von Hypothesen an konkreten Instanzen ist zudem oftmals hilfreich, um ein besseres Verständnis aufzubauen und möglicherweise eine bessere Hypothese zu finden. Dieser Untersuchung gehen wir in Beispiel \ref{ex:wuerfelprojektionen} nach.
 
 
 
@@ -20,7 +20,7 @@ Seien $E_1, E_2 \subset \mathbb{R}^3$ zwei Ebenen gegeben durch
     E_2:\ &x-y = 0 . \label{eq:ebene2}
 \end{align}
 
- Sei $K_W$ die Menge der Kanten eines Würfels $W$, siehe Abbildung \ref{fig:einheitswürfel}. Wir wollen überprüfen, ob die Summe der Kantenlängen von einer Orthogonalprojektion auf diese beiden Ebenen identisch ist. Diese Behauptung kann wie folgt formuliert werden
+ Sei $K_W$ die Menge der Kanten eines Würfels $W$, welcher in Abbildung \ref{fig:einheitswürfel} dargestellt ist. Wir wollen überprüfen, ob die Summe der Kantenlängen von einer Orthogonalprojektion auf diese beiden Ebenen identisch ist. Diese Behauptung kann wie folgt formuliert werden
 \begin{align} \label{eq:hypothese1}
     \sum_{k \in K_W} \|\Pi_{E_1}(\vec{v}_k)\| = \sum_{k \in K_W} \|\Pi_{E_2}(\vec{v}_{k})\|,
 \end{align}
@@ -40,7 +40,7 @@ wo $\Pi_{E_i}: \mathbb{R}^3 \rightarrow E_i$ die Orthogonalprojektion auf die Eb
 Bevor wir die Orthogonalprojektionen explizit berechnen, halten wir folgende Beobachtungen fest (siehe Abbildung \ref{fig:beobachtungenOrthogonalprojektionWurfel}):
 \begin{itemize}
     \item Die Translation einer Strecke verändert die Länge ihrer Orthogonalprojektion auf eine Ebene nicht.
-    \item Infolgedessen können wir jede Kante des Würfels als einen Vektor betrachten, indem wir ihren Fußpunkt in den Ursprung verschieben. 
+    \item Infolgedessen können wir jede Kante des Würfels als einen Vektor betrachten, indem wir ihren Fusspunkt in den Ursprung verschieben. 
 \end{itemize}
 
     \begin{figure}[htp]
@@ -88,15 +88,15 @@ Wir behalten dieses Ergebnis im Hinterkopf und betrachten nun die Orthogonalproj
     
 Aufgrund der Symmetrie des regulären Hexaeders können wir bei dieser Projektion zwei verschiedene Gruppen von Kanten unterscheiden:
 \begin{itemize}
-    \item Vier Kanten liegen parallel zur Ebene $E_2$ (bzw. stehen orthogonal auf dem Normalenvektor $\vec{n}_{E_2}$), wie beispielsweise die Kante $\overline{CG}$.
-    \item Die restlichen acht Kanten schließen alle denselben Winkel $\alpha$, siehe Abbildung \ref{fig:würfelE2},mit dem Normalenvektor $\vec{n}_{E_2}$ ein, wie beispielsweise die Kante $\overline{GH}$.
+    \item Vier Kanten liegen parallel zur Ebene $E_2$ bzw. stehen orthogonal auf dem Normalenvektor $\vec{n}_{E_2}$, wie beispielsweise die Kante $\overline{CG}$.
+    \item Die restlichen acht Kanten schliessen alle denselben Winkel $\alpha$, siehe Abbildung \ref{fig:würfelE2},mit dem Normalenvektor $\vec{n}_{E_2}$ ein, wie beispielsweise die Kante $\overline{GH}$.
 \end{itemize}
 
 Für die parallel zur Ebene $E_2$ verlaufenden Kanten gilt, dass ihre Länge bei der Projektion erhalten bleibt: 
 \begin{align}
     \|\Pi_{E_2}(\vec{v}_{CG})\| = 1. \nonumber
 \end{align}
-    Für die anderen acht Kanten berechnen wir die Projektionslänge analog zu Gleichung \eqref{eq:einführungsbeispielprojectionsimple}. Da der Richtungsvektor $\vec{v}_{GH} = (1, 0, 0)^T$ einen Winkel von $\alpha = 45^\circ$ mit dem Normalenvektor $\vec{n}_{E_2}$ einschließt, erhalten wir
+    Für die anderen acht Kanten berechnen wir die Projektionslänge analog zu Gleichung \eqref{eq:einführungsbeispielprojectionsimple}. Da der Richtungsvektor $\vec{v}_{GH} = (1, 0, 0)^T$ einen Winkel von $\alpha = 45^\circ$ mit dem Normalenvektor $\vec{n}_{E_2}$ einschliesst, erhalten wir
 \begin{align}
      \|\Pi_{E_2}(\vec{v}_{GH})\| = \sin\left(\frac{\pi}{4}\right) \cdot \|\vec{v}_{GH}\| = \frac{\sqrt{2}}{2} \cdot 1 = \frac{\sqrt{2}}{2}. \nonumber
 \end{align}
@@ -109,7 +109,7 @@ Ein Vergleich der Ergebnisse aus den Gleichungen \eqref{eq:summeebene1} und \eqr
 \end{example}
 
 
-Wie wir in Beispiel \ref{ex:wuerfelprojektionen} gesehen haben, ist die Summe der projizierten Kantenlängen einer Orthogonalprojektion nicht unabhängig von der Projektionsebene. Eine invariante Eigenschaft unter Orthogonalprojektionen zu finden, scheint daher nicht trivial zu sein. Betrachten wir jedoch die Ergebnisse aus den Gleichungen \eqref{eq:summeebene1} und \eqref{eq:summeebene2} erneut, fällt bei genauerem Hinsehen auf, dass die Werte sehr nah beieinander liegen. Bei weiterer Untersuchung zeigt sich eine interessante Gesetzmässigkeit: Verwendet man die Quadrate der projizierten Kantenlängen, scheinen die Summen tatsächlich identisch zu sein.
+Wie wir in Beispiel \ref{ex:wuerfelprojektionen} gesehen haben, ist die Summe der projizierten Kantenlängen einer Orthogonalprojektion nicht unabhängig von der Projektionsebene. Eine invariante Eigenschaft unter Orthogonalprojektionen zu finden, scheint daher nicht trivial zu sein. Betrachten wir jedoch die Ergebnisse aus den Gleichungen \eqref{eq:summeebene1} und \eqref{eq:summeebene2} erneut, fällt bei genauerem Hinsehen auf, dass die Werte sehr nah beieinander liegen. Bei weiterer Untersuchung zeigt sich eine interessante Gesetzmässigkeit: Verwendet man die Quadrate der projizierten Kantenlängen scheinen die Summen tatsächlich identisch zu sein.
 
 \begin{example} [Würfelprojektionen revisited] \label{ex:wuerfelprojektionen_revisited}
 Wir passen unsere Hypothese an und betrachten die Summe der quadrierten Längen, d.h.
@@ -125,7 +125,7 @@ und für die Ebene $E_2$
 \begin{align}
     \sum_{k \in K_W} \|\Pi_{E_2}(\vec{v}_k)\|^2 = 4 \cdot 1^2 + 8 \cdot \left(\frac{\sqrt{2}}{2}\right)^2 = 4 + 8 \cdot \frac{1}{2} = 8. \nonumber
 \end{align}
-Dies bestätigt die angepasste Hypothese für diese beiden Fälle. Dies beendet unser Beispiel
+Dies bestätigt die angepasste Hypothese für diese beiden Fälle. Dies beendet unser Beispiel.
 \end{example}
 
 In Beispiel \ref{ex:wuerfelprojektionen_revisited} haben wir gesehen, dass unsere Vermutung für die Ebenen $E_1$ und $E_2$ zutrifft. Wie sich im Folgenden zeigen wird, ist dies kein Zufall. Diese Invarianz gilt nicht nur für das reguläre Hexaeder, sondern allgemein für alle Polyeder im $\mathbb{R}^3$, die gewisse Symmetriebedingungen erfüllen.

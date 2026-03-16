@@ -6,6 +6,7 @@
 
 % Change the figure naming convention
 \addto\captionsenglish{\renewcommand{\figurename}{Abb.}}
+\addto\captionsenglish{\renewcommand\proofname{Beweis}}
 
 % Set page size and margins
 % Replace `letterpaper' with `a4paper' for UK/EU standard size
@@ -69,7 +70,6 @@
 \newtheorem{lemma}{Lemma}
 
 
-
 % Remove indent on whole document
 \setlength{\parindent}{0pt}
 
@@ -92,6 +92,15 @@
 % Anpassung Inhaltverzeichnis Bezeichnung
 \renewcommand*\contentsname{Inhaltsverzeichnis}
 \setcounter{tocdepth}{2}
+
+% add empty page
+\newpage
+\thispagestyle{empty} % or empty
+\mbox{}
+\newpage
+
+% make title
+\setcounter{page}{1}
 \maketitle
 
 % -------------------------
@@ -102,7 +111,21 @@
 \newpage
 \tableofcontents
 
-% Chapters
+% add empty page
+\newpage
+\thispagestyle{empty} % or empty
+\mbox{}
+\newpage
+
+% Vorwort
+\include{chapters/000_vorwort}
+
+% add empty page
+\newpage
+\thispagestyle{empty} % or empty
+\mbox{}
+\newpage
+
 \include{chapters/00_einleitung}
 \include{chapters/02_main_theorem}
 %\include{chapters/03_didaktik}

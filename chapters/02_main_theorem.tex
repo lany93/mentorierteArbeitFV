@@ -2,14 +2,14 @@
 In diesem Kapitel untersuchen wir die Orthogonalprojektionen von Polyedern mit spezifischen Symmetrieeigenschaften auf beliebige Ebenen im Raum. Wir folgen dabei der Argumentation von Hungerbühler und Zhang \cite{hungerbuehler_symmetric_polyhedra}.
 
 \subsection{Symmetrische Polyeder und Kantenprojektionen}
-Wie bereits im Einführungsbeispiel (siehe Beispiel \ref{ex:wuerfelprojektionen_revisited} und Aufgabe \ref{ex:verifizierungwuerfelprojektion}) aufgezeigt wurde, ist die Summe der quadrierten Längen der projizierten Kanten eines regulären Hexaeders unter einer Orthogonalprojektion unabhängig von der gewählten Projektionsebene. Diese Invarianzeigenschaft lässt sich jedoch nicht nur beim regulären Hexaeder beobachten, sondern allgemein bei Polyedern, deren Symmetrie.
+Wie bereits im Einführungsbeispiel (siehe Beispiel \ref{ex:wuerfelprojektionen_revisited}) angedeutet wurde, ist die Summe der quadrierten Längen der projizierten Kanten eines regulären Hexaeders unter einer Orthogonalprojektion unabhängig von der gewählten Projektionsebene. Diese Invarianzeigenschaft lässt sich jedoch nicht nur beim regulären Hexaeder beobachten, sondern allgemein bei Polyedern, deren Symmetrie.
 
 \begin{theorem} \label{satz:sum_projection_independent_of_plane}
-    Sei $P \subset \mathbb{R}^3$ ein Polyeder, dessen Symmetriegruppe eine der Gruppen $T$, $H$ oder $I$. Sei ferner $\Pi_{E}: \mathbb{R}^3 \to E$ die Orthogonalprojektion auf eine Ebene $E \subset \mathbb{R}^3$. Dann ist die Summe der Quadrate der projizierten Kantenlängen von $P$ unabhängig von der Wahl der Ebene $E$, das heisst:
+    Sei $P \subset \mathbb{R}^3$ ein Polyeder, dessen Symmetriegruppe eine der Gruppen $T$, $H$ oder $I$ ist. Sei ferner $\Pi_{E}: \mathbb{R}^3 \to E$ die Orthogonalprojektion auf eine Ebene $E \subset \mathbb{R}^3$. Dann ist die Summe der Quadrate der projizierten Kantenlängen von $P$ unabhängig von der Wahl der Ebene $E$, das heisst:
     \begin{align} \label{eq:sum_projection_independent_of_plane}
-        \sum_{k \in K_{P}} \|\Pi_{E_1}(\vec{v}_k)\|^2 = \sum_{k \in K_P} \|\Pi_{E_2}(\vec{v}_k))\|^2,
+        \sum_{k \in K_{P}} \|\Pi_{E_1}(\vec{v}_k)\|^2 = \sum_{k \in K_P} \|\Pi_{E_2}(\vec{v}_k)\|^2,
     \end{align}
-    wobei $K_{P}$ die Menge der Kanten von $P$ bezeichnet und $\vec{v}_k)$ der Richtungsvektor der Kante $k$ ist.
+    wobei $K_{P}$ die Menge der Kanten von $P$ bezeichnet und $\vec{v}_k$ der Richtungsvektor der Kante $k$ ist.
 \end{theorem}
 
 Um ein tieferes Verständnis für Satz \ref{satz:sum_projection_independent_of_plane} und dessen geometrische Konsequenzen zu gewinnen, betrachten wir im Folgenden erneut die Ergebnisse aus Aufgabe \ref{ex:verifizierungwuerfelprojektion} unter diesem neuen theoretischen Gesichtspunkt.
@@ -17,47 +17,87 @@ Um ein tieferes Verständnis für Satz \ref{satz:sum_projection_independent_of_p
 \begin{example}
     Wir erinnern uns an unser Einstiegsbeispiel, bei dem wir für die Summe der quadrierten projizierten Kantenlängen den folgenden Wert erhalten haben:
     \begin{align} \label{eq:summewürfelorthogonalprojektion_second_revisit}
-        \sum_{\vec{v}_k \in K_W} \|\Pi_{E_1}(\vec{v}_k)\|^2 = 8.
+        \sum_{k \in K_W} \|\Pi_{E_1}(\vec{v}_k)\|^2 = 8.
     \end{align}
     Dabei bezeichnet $K_W$ die Menge der Kanten des regulären Hexaeders $W$ und $E_1$ die Ebene $$x+y+z=0.$$ 
     
-    Gemäss Satz \ref{satz:sum_projection_independent_of_plane} ist dieser Wert unabhängig von der Wahl der Ebene. Das bedeutet: Unabhängig davon, auf welche Ebene $E \subset \mathbb{R}^3$ wir die Würfelkanten projizieren, die Summe der Quadrate wird stets $8$ ergeben. Es ist jedoch zu beachten, dass dieser spezifische Wert $8$ an die Kantenlänge des Einheitswürfels gebunden ist. Bei einem skalierten Hexaeder bleibt die Summe zwar ebenfalls invariant gegenüber der Wahl der Ebene, der konstante Wert weicht jedoch von $8$ ab. Dies beendet unser Beispiel.
+    Gemäss Satz \ref{satz:sum_projection_independent_of_plane} ist der Wert aus Gleichung \eqref{eq:summewürfelorthogonalprojektion_second_revisit} unabhängig von der Wahl der Ebene. Das bedeutet: Unabhängig davon, auf welche Ebene $E \subset \mathbb{R}^3$ wir die Würfelkanten projizieren, die Summe der Quadrate wird stets $8$ ergeben. Es ist jedoch zu beachten, dass dieser spezifische Wert $8$ an die Kantenlänge des Einheitswürfels gebunden ist. Bei einem skalierten Hexaeder bleibt die Summe zwar ebenfalls invariant gegenüber der Wahl der Ebene, der konstante Wert weicht jedoch von $8$ ab. Dies beendet unser Beispiel.
 \end{example}
 
 Bevor wir Satz \ref{satz:sum_projection_independent_of_plane} allgemein beweisen, skizzieren wir die grundlegende Beweisidee. Sei $P \subset \mathbb{R}^3$ ein Polyeder mit der Symmetriegruppe $\Omega \in \{T, H, I\}$. Mithilfe von $\Omega$ lassen sich die Kanten von $P$ in Äquivalenzklassen (Bahnen) unterteilen. Zwei Kanten $k_1, k_2$ sind äquivalent, wenn sie durch ein Element der Symmetriegruppe ineinander überführt werden können:
-\begin{align}
-    k_1 \sim k_2 :\iff \exists w \in \Omega: w(k_1) = k_2. \nonumber
+\begin{align} \label{eq:äquivalentekanten}
+    k_1 \sim k_2 :\iff \exists w \in \Omega: w(k_1) = k_2.
 \end{align}
-Da die Menge der Kanten $K_P$ die disjunkte Vereinigung dieser Äquivalenzklassen ist, reicht es aus, die Aussage des Satzes für alle einzelnen Klassen zu zeigen. Wir müssen also nachweisen, dass die Summe der quadrierten Projektionslängen für alle Kanten innerhalb einer solchen Symmetrie-Bahn invariant gegenüber der Wahl der Ebene ist.
+Ein Beispiel für zwei äquivalente Kanten bei einem Tetraeder sind zum Beispiel die Kanten $\overline{AD}$ und $\overline{BD}$, da diese sich mit einer Drehung, um die Drehachse durch den Punkt $D$, aufeinander überführen lassen, wie in Abbildung \ref{fig:tetraedermitpunkten} zu sehen ist.
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/polyeder/tetraederMitPunkten.png}
+    \caption{Die Strecken $\overline{AD}$ und $\overline{BD}$ lassen sich mit einer Drehung um $120^\circ$ aufeinander abbilden.}
+    \label{fig:tetraedermitpunkten}
+\end{figure}
+Es lässt sich schnell verifizieren, dass das Tetraeder sogar nur eine Äquivalenzklasse besitzt und demnach alle Kanten des Tetraeders äquivalent sind. Anders formuliert: es existiert eine Abbildung in der Symmetriegruppe $T$, sodass jede Kante auf jede andere Kante des Tetraeders abgebildet werden kann. Da die Menge der Kanten $K_P$ die disjunkte Vereinigung dieser Äquivalenzklassen ist (siehe Aufgabe \ref{ex:äquivalenzklassen}), reicht es aus, die Aussage des Satzes für alle einzelnen Klassen zu zeigen, da die Summe von konstanten Termen noch immer konstant ist. Wir müssen also nachweisen, dass die Summe der quadrierten Projektionslängen für alle Kanten innerhalb einer solchen Symmetrie-Bahn invariant gegenüber der Wahl der Ebene ist.
 
 
 % Proof of lemma 1
 \input{chapters/02_main_theorem/lemma1}
 
-Beachte, dass im Gegensatz zum direkten Beweis, der explizite Wert der Summe in Gleichung \eqref{eq:sum_line_segment_projection_independent_of_plane} nicht berechnet wird. Nun haben wir alles beisammen, um die Aussage in Satz \ref{satz:sum_projection_independent_of_plane} zu beweisen.
+Beachte, dass im Gegensatz zum direkten Beweis, der explizite Wert der Summe in Gleichung \eqref{eq:sum_line_segment_projection_independent_of_plane} nicht berechnet wird. Mit dem Beweis von Lemma \ref{lemma:quadriertesummeinvarianzstrecken} haben wir gezeigt, dass wir eine beliebige Strecke $s$ nehmen, die Abbildungen von dieser Strecke bilden können unter $\Omega \in \{T,H,I\}$ und die Summe in Gleichung \ref{eq:sum_line_segment_projection_independent_of_plane} konstant bleibt. 
 
-\begin{proof}
-    Sei $P$ ein Polyeder mit Symmetriegruppe $\Omega = T, H$ oder $I$. TODO:...
-\end{proof}
-
-Beachte, dass das Tetraeder, Hexaeder und Ikosaeder alle nur eine Äquivalenzklasse haben. Um ein Objekt zu finden, welches eines der Symmetriegruppen $T$, $H$ oder $I$ hat und mehrere Äquivalenzklassen aufweist, braucht es etwas kreativität. Ein Beispiel ist das Chiral-Polyeder in Abbildung \ref{fig:chiralpolyeder}.
+\begin{example}
+    Wir möchten hier kurz betonen, dass Lemma \ref{lemma:quadriertesummeinvarianzstrecken} in erster Linie eigentlich nichts zu tun hat mit Polyedern. Das Lemma gilt allgemein für Strecken in $\mathbb{R}^3$. Wir können das Lemma auch auf zwei verschiedene Strecken anwenden, wie zum Beispiel zwei Strecken, die ein "L" ergeben, siehe Abbildung \ref{fig:tetraederLachsen}.
 \begin{figure}[htp]
     \centering
-    \includegraphics[width=10cm]{images/polyeder/chiral_polyeder.png}
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+    \includegraphics[width=1\textwidth]{images/polyeder/tetraederLachsen.png}
+         \caption{Rotation des "L" um die Koordinatenachsen.}
+         \label{fig:tetraederLachsen}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+          \includegraphics[width=1.2\textwidth]{images/polyeder/tetraederLachsenvollständig.png}
+         \caption{Anwendung aller Rotationen in $T$.}
+         \label{fig:tetraederLachsenvollständig}
+     \end{subfigure}
+     \caption{Rotation einer beliebigen Strecke, wobei das Tetraeder als Referenz dient für die Drehachsen.}
+\end{figure}
+Wir starten mit dem schwarzen "L" und wenden die Symmetriegruppe $T$ des Tetraeders auf das "L" an. Die Rotation um die $x$-Achse ergibt das rote "L", die Rotation um die $y$-Achse ergibt das grüne "L" und die Rotation um die $z$-Achse ergibt das blaue "L". Nach all den Rotationen, erhalten wir eine Form wie in Abbildung \ref{fig:tetraederLachsenvollständig}. Dabei ist, gemäss dem Lemma \ref{lemma:quadriertesummeinvarianzstrecken}, die Summe 
+    \begin{align}
+        \sum_{w \in \Omega} \|\Pi_{E}w(s)\|^2  \nonumber
+    \end{align}
+    unabhängig von der Ebene $E$. Dies beendet unser Beispiel.
+
+\end{example}
+
+Nun haben wir alles beisammen, um die Aussage in Satz \ref{satz:sum_projection_independent_of_plane} zu beweisen. 
+
+\begin{proof}
+    Sei $P$ ein Polyeder mit Symmetriegruppe $\Omega = T, H$ oder $I$. Wie bereits bei der Skizze vom Beweis erwähnt, sagen wir, dass zwei Kanten äquivalent sind, falls Gleichung \eqref{eq:äquivalentekanten} gilt. Somit haben wir eine Äquivalenzrelation auf der Menge $K_P$ definiert und es folgt, dass $K_P$ der disjunkten Vereinigung der Äquivalenzklassen entspricht. Die Gruppe $\Omega$ operiert auf jeder Äquivalenzklasse. Gemäss Lemma \ref{lemma:quadriertesummeinvarianzstrecken} ist die Summe
+        \begin{align}
+        \sum_{w \in \Omega} \|\Pi_{E}w(s)\|^2  \nonumber
+    \end{align}
+    für jede Äquivalenzklasse unabhängig von der Ebene $E$. Da dies für alle Äquivalenzklassen gilt, folgt die Aussage auch für $K_P$.
+\end{proof}
+
+Beachte, dass das Tetraeder, Hexaeder und Ikosaeder alle nur eine Äquivalenzklasse haben. Um ein Objekt zu finden, welches eines der Symmetriegruppen $T$, $H$ oder $I$ hat und mehrere Äquivalenzklassen aufweist, braucht es etwas Kreativität. Ein Beispiel ist das Chiral-Polyeder in Abbildung \ref{fig:chiralpolyeder}.
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/polyeder/chiral_polyeder.png}
     \caption{Ein Chiral-Polyeder mit Symmetriegruppe $T$, welches mehrere Äquivalenzklassen aufweist.\protect\footnotemark}
     \label{fig:chiralpolyeder}
 \end{figure}
 \footnotetext{Quelle: \cite{hungerbuehler_symmetric_polyhedra}}
 
 \begin{example} \label{example:geradesprisma}
-    Eine Frage, die man sich stellen könnte, ist, wieso der Beweis für Lemma \ref{lemma:quadriertesummeinvarianzstrecken} nicht für andere Symmetriegruppen funktioniert. Dafür betrachten wir zum Beispiel ein gerades Prisma mit einem $n$-Eck als Grundfläche, siehe Abbildung \ref{fig:geradesprisma}. 
+    Eine Frage, die man sich stellen könnte, ist, wieso der Beweis für Lemma \ref{lemma:quadriertesummeinvarianzstrecken} nicht für andere Symmetriegruppen funktioniert. Dafür betrachten wir zum Beispiel ein gerades Prisma mit einem $n$-Eck als Grundfläche, siehe Abbildung \ref{fig:geradesprisma}. Wir bezeichnen die Höhe mit $h$ und die Kanten der $n$-Ecks mit $a$.
     \begin{figure}[htp]
     \centering
     \includegraphics[width=0.4\textwidth]{images/prisma_z_achse.png}
     \caption{Gerades Prisma mit einem $5$-Eck als Grundfläche.}
     \label{fig:geradesprisma}
 \end{figure}
-    Die Symmetriegruppe vom geraden Prisma ist die \textit{Diedergruppe $D_n$}, welches die Symmetriegruppe des regulären $n$-Ecks ist. Die orientierungserhaltenden Kongruenztransformationen sind die Drehungen, um die Achse, welche durch die Mittelpunkte, $M_{\text{Boden}}$ und $M_{\text{Decke}}$ der $5$-Ecke verläuft (Sowie die Achsen, die durch die Mittelpunkte gegenüberliegender Kanten (oder Seiten) verlaufen). Somit ist die z-Achse ein nicht-trivialer invarianter Unterraum $U \subset \mathbb{R}^3$ und folglich $D_n$ nicht irreduzibel. Somit würde der Beweis nicht mehr funktionieren. Stattdessen berechnen wir zuerst einmal die Matrix $M:= \sum_{w \in \Omega} w(\vec{s}) w(\vec{s})^T$. Beachte, dass wir in diesem Fall zwei Orbits haben: Die Höhenkanten sowie die Kanten vom $n-$Eck, am Boden sowie an der Decke. Das heisst für die Matrix $M$ gilt
+    Die Symmetriegruppe vom geraden Prisma ist die \textit{Diedergruppe $D_n$}, welches die Symmetriegruppe des regulären $n$-Ecks ist. Die orientierungserhaltenden Kongruenztransformationen sind die Drehungen, um die Achse, welche durch die Mittelpunkte, $M_{\text{Boden}}$ und $M_{\text{Decke}}$ der $5$-Ecke verläuft (Sowie die Achsen, die durch die Mittelpunkte gegenüberliegender Kanten (oder Seiten) verlaufen). Somit ist die z-Achse ein nicht-trivialer invarianter Unterraum $U \subset \mathbb{R}^3$ und folglich $D_n$ nicht irreduzibel. Somit würde der Beweis nicht mehr funktionieren. Nichtsdestotrotz berechnen wir einmal die Matrix $M:= \sum_{w \in \Omega} w(\vec{s}) w(\vec{s})^T$. Beachte, dass wir in diesem Fall zwei Orbits haben: Die Höhenkanten sowie die Kanten vom $n-$Eck, am Boden sowie an der Decke. Das heisst für die Matrix $M$ gilt
     \begin{align}
         M = M_{\text{Höhenkanten}} + M_{\text{Kanten n-Eck}}. \nonumber
     \end{align}
@@ -69,8 +109,19 @@ Beachte, dass das Tetraeder, Hexaeder und Ikosaeder alle nur eine Äquivalenzkla
     Analog gilt
     \begin{align}
         M_{\text{Kanten n-Eck}} &= \sum_{w \in D_n}\begin{pmatrix} x_i \\ y_i \\ 0 \end{pmatrix} \begin{pmatrix} x_i & y_i & 0 \end{pmatrix} \nonumber \\
-        &= n\begin{pmatrix} x_i^2 & x_i y_i & 0 \\ x_i y_i & y_i^2 & 0 \\ 0 & 0 & 0 \end{pmatrix} \nonumber \\
-        &= \begin{pmatrix} n  a^2 & 0 & 0 \\ 0 & n  a^2 & 0 \\ 0 & 0 & 0 \end{pmatrix}. \nonumber
+        &= \sum_{w \in D_n}\begin{pmatrix} x_i^2 & x_i y_i & 0 \\ x_i y_i & y_i^2 & 0 \\ 0 & 0 & 0 \end{pmatrix} \nonumber \\
+        &= \begin{pmatrix} n  a^2 & 0 & 0 \\ 0 & n  a^2 & 0 \\ 0 & 0 & 0 \end{pmatrix}, \nonumber
+    \end{align}
+
+    da aufgrund von Symmetrie 
+    \begin{align}
+        \sum_{w \in D_n} x_i^2 = \sum_{w \in D_n}  y_i^2 \nonumber 
+    \end{align}
+    und somit 
+    \begin{align}
+        &2\sum_{w \in D_n} x_i^2 = 2 \sum_{w \in D_n} y_i^2 = 
+            \sum_{w \in D_n} x_i^2 + \sum_{w \in D_n} y_i^2 = \sum_{w \in D_n} (x_i^2 +y_i^2) = 2na^2\nonumber \\
+            \implies &\sum_{w \in D_n} x_i^2 = na^2. \nonumber
     \end{align}
     Es folgt
     \begin{align}
@@ -78,14 +129,14 @@ Beachte, dass das Tetraeder, Hexaeder und Ikosaeder alle nur eine Äquivalenzkla
     \end{align}
     Daraus folgen zwei Fälle
     \begin{itemize}
-        \item Fall $a \neq h$: $M \neq \lambda I_3 \implies $ Die Summe der quadrierten Kantenlängen unter eine Orthogonalprojektion sind nicht unabhängig von der Ebene.
+        \item Fall $a \neq h$: $M \neq \lambda I_3 \implies $ Die Summe der quadrierten Kantenlängen unter einer Orthogonalprojektion ist nicht unabhängig von der Ebene.
         \item Fall $a = h$: $M = na^2 I_3 \implies $ Die Summe \eqref{eq:sum_line_segment_projection_independent_of_plane} bleibt, unabhängig von der Ebene, konstant.
     \end{itemize}
     Dies beendet unser Beispiel.
 \end{example}
 
 
-Eine interessante Beobachtung von Beispiel \ref{example:geradesprisma} ist, dass die Bedingungen in Satz (\ref{satz:sum_projection_independent_of_plane}) eine hinreichende, aber keine notwendige Bedingung ist für die Projektionseigenschaft (siehe Gleichung (\ref{eq:sum_projection_independent_of_plane})). Das heisst es existieren Polyeder, welche die Projektionseigenschaft erfüllen, aber nicht die Symmetrieeigenschaften besitzen. Ein Beispiel dafür ist das gerade Prisma mit $a=h$. Ein weiteres Beispiel ist der Pseudo-Rhombenkuboktaeder, siehe Abbildung \ref{fig:Pseudorhombicuboctahedron}. \footnote{Nicht zu verwechseln mit dem Rhombenkuboktaeder (siehe Abschnitt \ref{sec:rhombenkuboktaeder}).}
+Eine interessante Beobachtung von Beispiel \ref{example:geradesprisma} ist, dass die Bedingungen in Satz \ref{satz:sum_projection_independent_of_plane} eine hinreichende, aber keine notwendige Bedingung ist für die Projektionseigenschaft, siehe Gleichung (\ref{eq:sum_projection_independent_of_plane}). Das heisst, es existieren Polyeder, welche die Projektionseigenschaft erfüllen, aber nicht die Symmetrieeigenschaften besitzen. Ein Beispiel dafür ist das gerade Prisma mit $a=h$ und $n \neq 4$. Ein weiteres Beispiel ist der Pseudo-Rhombenkuboktaeder, siehe Abbildung \ref{fig:Pseudorhombicuboctahedron}. \footnote{Nicht zu verwechseln mit dem Rhombenkuboktaeder (siehe Abschnitt \ref{sec:rhombenkuboktaeder}).}
 
 \begin{figure}[htp]
     \centering
@@ -94,7 +145,7 @@ Eine interessante Beobachtung von Beispiel \ref{example:geradesprisma} ist, dass
     \label{fig:Pseudorhombicuboctahedron}
 \end{figure}
 \begin{example} [Symmetriegruppe Pseudo-Rhombenkuboktaeder] \label{example:pseudorhombenkuboktaeder}
-    Eine unserer Behauptungen ist, dass der Pseudo-Rhombenkuboktaeder keine der Symmetriegruppen T, H oder I hat. Wenn wir das Pseudo-Rhombenkuboktaeder (siehe Abbildung \ref{fig:Pseudorhombicuboctahedron}) betrachten, stellen wir fest, dass wir eine Symmetrieachse 4.\ Ordnung haben. Diese geht vertikal durch das obere und untere rote Quadrat ("Deckel" und "Boden"). Da die Symmetriegruppe T gar keine Symmetrieachse 4.\ Ordnung hat, können wir ausschliessen, dass der Pseudo-Rhombenkuboktaeder die Symmetriegruppe T hat. Bemerke, dass das Pseudo-Rhombenkuboktaeder genau eine Symmetrieachse 4.\ Ordnung besitzt. Analog können wir auch die Symmetriegruppen H und I ausschliessen (siehe Aufgaben \ref{ex:PseudoRhombenkuboktaeder_Symmetriegruppe}).
+    Eine unserer Behauptungen ist, dass der Pseudo-Rhombenkuboktaeder keine der Symmetriegruppen $T$, $H$ oder $I$ hat. Wenn wir das Pseudo-Rhombenkuboktaeder (siehe Abbildung \ref{fig:Pseudorhombicuboctahedron}) betrachten, stellen wir fest, dass wir eine Symmetrieachse 4. Ordnung haben. Diese geht vertikal durch das obere und untere rote Quadrat ("Deckel" und "Boden"). Da die Symmetriegruppe $T$ gar keine Symmetrieachse 4. Ordnung hat, können wir ausschliessen, dass der Pseudo-Rhombenkuboktaeder die Symmetriegruppe $T$ hat. Bemerke, dass das Pseudo-Rhombenkuboktaeder genau eine Symmetrieachse 4. Ordnung besitzt. Analog können wir auch die Symmetriegruppen $H$ und $I$ ausschliessen (siehe Aufgaben \ref{ex:PseudoRhombenkuboktaeder_Symmetriegruppe}).
 \end{example}
 
 Es bleibt also noch zu zeigen, dass das Pseudo-Rhombenkuboktaeder die Gleichung 
@@ -103,17 +154,17 @@ Es bleibt also noch zu zeigen, dass das Pseudo-Rhombenkuboktaeder die Gleichung
 \begin{proposition}
     Sei $\Pi_{E}:\mathbb{R}^3 \rightarrow E$ die orthogonale Projektion auf eine Ebene $E \subset \mathbb{R}^3$. Dann ist die Summe der Quadrate der projizierten Kanten von einem Pseudo-Rhombenkuboktaeder $P$ unabhängig von der Ebene $E$, i.e. 
     \begin{align}
-        \sum_{k \in K_{P}} ||\Pi_{E_1}(k)||^2 = \sum_{k \in K_P} ||\Pi_{E_2}(k)||^2,
+        \sum_{k \in K_{P}} ||\Pi_{E_1}(\vec{v}_k)||^2 = \sum_{k \in K_P} ||\Pi_{E_2}(\vec{v}_k)||^2,
     \end{align}
     wobei $K_{P}$ die Menge der Kanten von $P$ ist.
 \end{proposition}
 \begin{proof}
-    Wir betrachten, wie bereits im Beweis zum Lemma \ref{lemma:quadriertesummeinvarianzstrecken}, die Gleichung \eqref{eq:summemitmatrixM}
+    Wir betrachten, ähnlich zur Gleichung \eqref{eq:summemitmatrixM}, die folgende Summe
     
     \begin{align}
-        \sum_{w \in \Omega_P} \|\Pi_{E}w(\vec{s})\|^2 = |\Omega|  \|\vec{s}\|^2 - \vec{n}_E^T M \vec{n}_E, \nonumber 
+        \sum_{k \in K_P} \|\Pi_{E}\vec{v}_k\|^2 = |K_P|  \|\vec{v}_k\|^2 - \vec{n}_E^T M \vec{n}_E, \nonumber 
     \end{align}
-    wobei $\Omega_P$ die Symmetriegruppe von $P$ ist. Wir zeigen, dass die Matrix $M$ wieder ein vielfaches der Einheitsmatrix $I_3$ ist. Wir betrachten also     $$M_P = \sum_{k \in K_P} \vec{v}_k \vec{v}_k^T,$$ wobei $\vec{v}_k$ die Richtungsvektoren der Kanten des Pseudo-Rhombenkuboktaeders $P$ sind. Es ist bekannt, dass $P$ aus dem regulären Rhombenkuboktaeder $P_R$ hervorgeht, indem eine der quadratischen Kuppeln (mit Kantenmenge $K_{\text{Kuppel}}$) um den Winkel $\phi = 45^\circ$ um die Hauptsymmetrieachse ($z$-Achse) gedreht wird, siehe Anhang \ref{sec:rhombenkuboktaeder}. Die Kantenmenge des regulären Körpers können wir somit in einen unveränderten Basis-Teil $K_{\text{Basis}}$ und die Kuppel $K_{\text{Kuppel}}$ teilen. Aufgrund der Oktaedersymmetrie vom regulären Rhombenkuboktaeder $P_R$ gilt
+    wobei $K_P$ die Menge der Kanten von $P$ ist. Wir zeigen, dass die Matrix $M$ wieder ein vielfaches der Einheitsmatrix $I_3$ ist. Wir betrachten also     $$M_P = \sum_{k \in K_P} \vec{v}_k \vec{v}_k^T,$$ wobei $\vec{v}_k$ die Richtungsvektoren der Kanten des Pseudo-Rhombenkuboktaeders $P$ sind. Es ist bekannt, dass $P$ aus dem regulären Rhombenkuboktaeder $P_R$ hervorgeht, indem eine der quadratischen Kuppeln (mit Kantenmenge $K_{\text{Kuppel}}$) um den Winkel $\phi = 45^\circ$ um die Hauptsymmetrieachse ($z$-Achse) gedreht wird, siehe Anhang \ref{sec:rhombenkuboktaeder}. Die Kantenmenge des regulären Körpers können wir somit in einen unveränderten Basis-Teil $K_{\text{Basis}}$ und die Kuppel $K_{\text{Kuppel}}$ teilen. Aufgrund der Oktaedersymmetrie vom regulären Rhombenkuboktaeder $P_R$ gilt
     \begin{align}
         M_{P_R} = M^{'}_{\text{Basis}} + M^{'}_{\text{Kuppel}} = \lambda I_3 . \nonumber
     \end{align}
@@ -121,7 +172,7 @@ Es bleibt also noch zu zeigen, dass das Pseudo-Rhombenkuboktaeder die Gleichung
 \begin{align}
         M^{'}_{\text{Basis}} = M_{\text{Basis}} \nonumber
     \end{align}
-    Für die Kuppel folgt zudem
+    Sei $R_z(45^\circ)$ die Drehung um $45^\circ$ um die $z$-Achse. Für die Kuppel folgt somit
     \begin{align}
         M^{'}_{\text{Kuppel}} &= \sum_{k \in K_{\text{Kuppel}}} \left(R_z(45^\circ)\vec{v}_k\right) \left(R_z(45^\circ)\vec{v}_k\right)^T \nonumber \\
         &= R_z(45^\circ) \left(\sum_{k \in K_{\text{Kuppel}}} \vec{v}_k \vec{v}_k^T \right) R_z(45^\circ)^T \nonumber \\
@@ -130,7 +181,7 @@ Es bleibt also noch zu zeigen, dass das Pseudo-Rhombenkuboktaeder die Gleichung
 
     
 
-    Die Drehsymmetrien der isolierten Kuppel $K_{Kuppel}$ ist identisch zur Symmetriegruppe der zyklischen Gruppe $C_{4}$ bezüglich der $z$-Achse. Dies erzwingt für die Matrix $M_{\text{Kuppel}}$ der Kuppel die Diagonalgestalt $$M_{\text{Kuppel}} = \text{diag}(\alpha, \alpha, \beta).$$ Da die $x$- und $y$-Einträge identisch sind, kommutiert $M_{\text{Kuppel}}$ mit jeder beliebigen Rotation $R_z(\phi)$ um die $z$-Achse. Die Drehung der Kuppel um $45^\circ$ ändert die Matrix für die Kuppel nicht und es folgt
+    Die Drehsymmetrien der isolierten Kuppel $K_{Kuppel}$ ist identisch zur Symmetriegruppe der zyklischen Gruppe $C_{4}$ bezüglich der $z$-Achse. Dies erzwingt für die Matrix $M_{\text{Kuppel}}$ die Diagonalmatrix $$M_{\text{Kuppel}} = \text{diag}(\alpha, \alpha, \beta).$$ Da die $x$- und $y$-Einträge identisch sind, kommutiert $M_{\text{Kuppel}}$ mit jeder beliebigen Rotation $R_z(\phi)$ um die $z$-Achse. Die Drehung der Kuppel um $45^\circ$ ändert die Matrix für die Kuppel nicht und es folgt
     \begin{align}
        M^{'}_{\text{Kuppel}} = M_{\text{Kuppel}}. \nonumber
     \end{align}
@@ -140,11 +191,11 @@ Es bleibt also noch zu zeigen, dass das Pseudo-Rhombenkuboktaeder die Gleichung
         M_P = M_{P_R} = \lambda I_3 \nonumber
     \end{align}
     
-    Da $M_P = \lambda I_3$ ein skalares Vielfaches der Einheitsmatrix ist, gilt für die Summe der quadrierten Längen der auf eine Ebene $E$ (mit Einheitsnormalenvektor $\vec{n}$) projizierten Kanten:
+    Da $M_P = \lambda I_3$ ein skalares Vielfaches der Einheitsmatrix ist, ist die Summe
     \begin{align}
-        \sum_{k \in K_P} ||\Pi_E(\vec{v}_k)||^2 &= \text{konstant}, \nonumber
+        \sum_{k \in K_P} ||\Pi_E(\vec{v}_k)||^2  \nonumber
     \end{align}
-    womit die Aussage folgt.
+    unabhängig von der Ebene $E$.
 \end{proof}
 
 \newpage
